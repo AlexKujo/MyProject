@@ -1,0 +1,72 @@
+﻿<Window x:Class="MyProject_NET_8.TextTemplates.EditToolsList.WindowEditToolsList"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MyProject_NET_8.TextTemplates.EditToolsList"
+        mc:Ignorable="d"
+        Title="WindowEditToolsList"
+        Height="722"
+        Width="998">
+    <Grid Margin="0,0,0,-6">
+        <ListBox x:Name="ListBoxTools"
+                 SelectionChanged="ListBoxTools_SelectionChanged"
+                 d:ItemsSource="{d:SampleData ItemCount=5}"
+                 Margin="499,23,38,143"
+                 SelectionMode="Single"
+                 FontFamily="Verdana"
+                 FontSize="13" />
+        <Button x:Name="ButtonAddTool"
+                Content="Добавить..."
+                HorizontalAlignment="Left"
+                Margin="120,604,0,0"
+                VerticalAlignment="Top"
+                Click="ButtonAddTool_Click"
+                Height="32"
+                Width="71" />
+        <Button x:Name="ButtonDeleteTool"
+                Content="Удалить..."
+                HorizontalAlignment="Left"
+                Margin="454,604,0,0"
+                VerticalAlignment="Top"
+                Width="70"
+                Height="32"
+                Click="ButtonDeleteTool_Click" />
+        <StackPanel x:Name="StackPanelDetails"
+                    HorizontalAlignment="Right"
+                    Width="445"
+                    TextElement.FontFamily="Verdana"
+                    TextElement.FontSize="13"
+                    TextElement.FontWeight="Medium"
+                    Background="#F0F0F0"
+                    DataContext="{Binding SelectedTool}"
+                    Margin="0,163,524,216">
+            <StackPanel.Resources>
+                <Style TargetType="TextBlock">
+                    <Setter Property="Width"
+                            Value="420" />
+                    <Setter Property="TextWrapping"
+                            Value="Wrap" />
+                </Style>
+            </StackPanel.Resources>
+            <TextBlock Text="{Binding Name, StringFormat = 'Наименование: {0}'}"
+                       Margin="5" />
+            <TextBlock Text="{Binding IdentNumber, StringFormat = 'Идентификационный номер: {0}'}"
+                       Margin="5" />
+            <TextBlock Text="{Binding WrenchSize, StringFormat='Размер ключа: {0} мм', TargetNullValue=''}"
+                       Margin="5" />
+            <TextBlock Text="{Binding SocketSize, StringFormat='Размер посад. привода: {0} мм', TargetNullValue=''}"
+                       Margin="5" />
+            <TextBlock Text="{Binding MinMoment, StringFormat='Минимальный момент: {0} Н·м', TargetNullValue=''}"
+                       Margin="5" />
+            <TextBlock Text="{Binding MaxMoment, StringFormat='Максимальный момент: {0} Н·м', TargetNullValue=''}"
+                       Margin="5" />
+        </StackPanel>
+        <Label Content="Свойства"
+               HorizontalAlignment="Left"
+               Margin="84,124,0,0"
+               VerticalAlignment="Top"
+               FontSize="14"
+               FontFamily="Verdana" />
+    </Grid>
+</Window>

@@ -1,0 +1,27 @@
+﻿<Window x:Class="MyProject_NET_8.TextTemplates.AddTool.WindowAddTool"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Добавить инструмент"
+        Height="205"
+        Width="400">
+    <Grid Margin="10,10,10,0"
+          Height="176"
+          VerticalAlignment="Top">
+        <StackPanel Height="91"
+                    VerticalAlignment="Top">
+            <Label Content="Название" />
+            <TextBox Name="NameTextBox" />
+
+            <Label Content="Идентификационный номер" />
+            <TextBox Name="IdentNumberTextBox" />
+
+        </StackPanel>
+        <Button Content="Добавить инструмент"
+                Click="InputTool_Click"
+                Height="46"
+                Margin="0,106,0,0"
+                HorizontalAlignment="Center"
+                Width="380"
+                VerticalAlignment="Top" />
+    </Grid>
+</Window>
