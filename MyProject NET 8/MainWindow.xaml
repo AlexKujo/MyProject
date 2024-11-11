@@ -39,5 +39,9 @@
                 Height="42"
                 Width="151"
                 Click="ProcedureReverserButton_Click" />
+        <Label Content="Version 2"
+               HorizontalAlignment="Left"
+               Margin="265,90,0,0"
+               VerticalAlignment="Top" />
     </Grid>
 </Window>
