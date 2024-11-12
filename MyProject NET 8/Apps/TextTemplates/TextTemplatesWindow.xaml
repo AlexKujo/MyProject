@@ -1,4 +1,4 @@
-﻿<Window x:Class="MyProject_NET_8.TextTemplatesWindow"
+﻿<Window x:Class="MyProject_NET_8.Apps.TextTemplates.TextTemplatesWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -7,42 +7,71 @@
         mc:Ignorable="d"
         Title="TextPresets"
         Height="903"
-        Width="1460">
+        Width="1460"
+        FontSize="12"
+        FontFamily="Verdana">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="791*" />
+            <ColumnDefinition Width="669*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="820*" />
+            <RowDefinition Height="67*" />
+        </Grid.RowDefinitions>
+        <Canvas Margin="-1171,67,1007,5" />
         <CheckBox x:Name="InstallationCheckBox"
                   Content="Установить"
                   HorizontalAlignment="Left"
-                  Margin="350,557,0,0"
                   VerticalAlignment="Top"
                   Checked="CheckBox_Checked"
-                  Unchecked="CheckBox_Unchecked" />
+                  Unchecked="CheckBox_Unchecked"
+                  Height="15"
+                  Width="88"
+                  Margin="278,5,0,0"
+                  Grid.Row="1" />
         <CheckBox x:Name="RemoveCheckBox"
                   Content="Снять"
                   HorizontalAlignment="Left"
-                  Margin="504,557,0,0"
                   VerticalAlignment="Top"
                   Checked="CheckBox_Checked"
-                  Unchecked="CheckBox_Unchecked" />
+                  Unchecked="CheckBox_Unchecked"
+                  Height="15"
+                  Width="56"
+                  Margin="278,34,0,0"
+                  Grid.Row="1" />
         <ComboBox x:Name="ComboBoxInputThread"
-                  HorizontalAlignment="Left"
-                  Margin="153,515,0,0"
                   VerticalAlignment="Top"
-                  Width="80"
                   IsEditable="True"
-                  SelectionChanged="ComboBoxInputThread_SelectionChanged" />
+                  SelectionChanged="ComboBoxInputThread_SelectionChanged"
+                  Height="22"
+                  HorizontalAlignment="Left"
+                  HorizontalContentAlignment="Left"
+                  Width="89"
+                  Margin="150,29,0,0"
+                  Grid.Row="1" />
         <ComboBox x:Name="ComboBoxWrenchSize"
-                  HorizontalAlignment="Left"
-                  Margin="359,515,0,0"
                   VerticalAlignment="Top"
-                  Width="60"
                   IsEditable="True"
-                  SelectionChanged="ComboBoxWrenchSize_SelectionChanged" />
+                  SelectionChanged="ComboBoxWrenchSize_SelectionChanged"
+                  Height="21"
+                  HorizontalAlignment="Left"
+                  Width="60"
+                  Margin="267,30,0,0"
+                  Grid.Row="1"
+                  Grid.Column="1" />
         <ComboBox x:Name="ComboBoxToolType"
                   SelectionChanged="ComboBoxToolType_SelectionChanged"
-                  Margin="814,56,434,783"
                   FontFamily="Ariel"
                   FontSize="12"
-                  IsEditable="True">
+                  IsEditable="True"
+                  Width="118"
+                  HorizontalAlignment="Left"
+                  VerticalAlignment="Top"
+                  Margin="374,30,0,0"
+                  Height="21"
+                  Grid.Row="1"
+                  Grid.Column="1">
             <ComboBoxItem Content="Трещотка"
                           Tag="ratchet" />
             <ComboBoxItem Content="Рожковый"
@@ -53,86 +82,135 @@
         <TextBox x:Name="TextBoxTemplate"
                  Text=""
                  TextWrapping="Wrap"
-                 VerticalAlignment="Top"
-                 HorizontalAlignment="Left"
-                 Margin="48,607,0,0"
-                 Height="200"
-                 Width="682"
                  IsReadOnly="True"
                  FontFamily="Verdana"
                  FontSize="13"
-                 PreviewMouseDoubleClick="TextBoxTemplate_PreviewMouseDoubleClick" />
+                 PreviewMouseDoubleClick="TextBoxTemplate_PreviewMouseDoubleClick"
+                 Margin="10,554,26,14" />
         <ListBox x:Name="ListBoxTools"
                  SelectionChanged="ListBoxTools_SelectionChanged"
                  d:ItemsSource="{d:SampleData ItemCount=5}"
-                 Margin="774,119,66,80"
                  SelectionMode="Multiple"
                  FontFamily="Verdana"
-                 FontSize="13" />
-        <TextBox x:Name="ImpactPointsTextBox"
+                 FontSize="13"
+                 Margin="17,35,0,14"
+                 Grid.Column="1"
                  HorizontalAlignment="Left"
-                 Margin="563,515,0,0"
+                 Width="634" />
+        <TextBox x:Name="ImpactPointsTextBox"
                  TextWrapping="Wrap"
                  VerticalAlignment="Top"
-                 Width="47"
                  PreviewTextInput="ImpactPointsTextBox_PreviewTextInput"
-                 Height="22" />
+                 Height="21"
+                 HorizontalAlignment="Left"
+                 Width="60"
+                 Margin="34,30,0,0"
+                 Grid.Row="1" />
         <CheckBox x:Name="ThreadFilterCheckBox"
                   Content="С учетом резьбы"
                   HorizontalAlignment="Left"
-                  Margin="1173,79,0,0"
                   VerticalAlignment="Top"
                   Checked="CheckBox_Checked"
-                  Unchecked="CheckBox_Unchecked" />
+                  Unchecked="CheckBox_Unchecked"
+                  Height="14"
+                  Width="126"
+                  Margin="522,33,0,0"
+                  Grid.Row="1"
+                  Grid.Column="1" />
         <Label Content="Резьба"
+               VerticalAlignment="Top"
+               HorizontalContentAlignment="Center"
+               Height="25"
+               Margin="143,1,0,0"
+               Grid.Row="1"
                HorizontalAlignment="Left"
-               Margin="169,489,0,0"
-               VerticalAlignment="Top" />
+               Width="96" />
         <Label Content="Размер под ключ"
+               VerticalAlignment="Top"
+               HorizontalContentAlignment="Center"
+               Height="25"
+               Margin="236,3,0,0"
+               Grid.Row="1"
                HorizontalAlignment="Left"
-               Margin="336,489,0,0"
-               VerticalAlignment="Top" />
+               Width="122"
+               Grid.Column="1" />
         <Label Content="Точки воздействия"
                HorizontalAlignment="Left"
-               Margin="530,489,0,0"
-               VerticalAlignment="Top" />
-        <Label Content="Шаблон"
+               VerticalAlignment="Top"
+               HorizontalContentAlignment="Center"
+               Height="24"
+               Width="128"
+               Margin="10,2,0,0"
+               Grid.Row="1" />
+        <Label x:Name="TemplateTitle"
+               Content="Шаблон"
                HorizontalAlignment="Left"
-               Margin="362,576,0,0"
-               VerticalAlignment="Top" />
+               VerticalAlignment="Top"
+               FontWeight="DemiBold"
+               FontSize="16"
+               Height="29"
+               Width="84"
+               Margin="323,520,0,0" />
         <Label x:Name="CopyNotificationLabel"
                Content="Текст скопирован в буфер обмена!"
-               Margin="246,815,874,23"
                Opacity="0"
                IsHitTestVisible="False"
-               HorizontalContentAlignment="Stretch" />
+               HorizontalContentAlignment="Stretch"
+               VerticalContentAlignment="Center"
+               FontSize="14"
+               HorizontalAlignment="Left"
+               VerticalAlignment="Top"
+               Height="27"
+               Width="266"
+               Margin="538,444,0,0"
+               Grid.ColumnSpan="2" />
         <Button x:Name="ButtonEditToolsList"
-                Content="Edit"
+                Content="Изменить..."
                 HorizontalAlignment="Left"
-                Margin="1084,825,0,0"
                 VerticalAlignment="Top"
-                Height="38"
+                Height="20"
                 Width="102"
-                Click="ButtonEditToolsList_Click" />
+                Click="ButtonEditToolsList_Click"
+                Margin="549,10,0,0"
+                Grid.Column="1" />
         <Button x:Name="ButtonResetAll"
                 Content="Сбросить"
                 HorizontalAlignment="Left"
-                Margin="666,217,0,0"
-                VerticalAlignment="Top"
-                Height="41"
-                Width="64"
-                Click="ButtonResetAll_Click" />
+                Width="68"
+                Click="ButtonResetAll_Click"
+                Margin="696,12,0,25"
+                Grid.Row="1" />
         <ListBox x:Name="ListBoxToolsExport"
-                 ItemsSource="{Binding Tools}"
-                 Margin="48,56,850,509"
                  SelectionMode="Single"
                  HorizontalContentAlignment="Stretch"
-                 HorizontalAlignment="Stretch">
+                 RenderTransformOrigin="0.5,0.5"
+                 Margin="10,35,27,0"
+                 Height="347"
+                 VerticalAlignment="Top"
+                 d:ItemsSource="{d:SampleData ItemCount=5}">
+            <ListBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="1"
+                                    ScaleY="1" />
+                    <SkewTransform />
+                    <RotateTransform />
+                    <TranslateTransform />
+                </TransformGroup>
+            </ListBox.RenderTransform>
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Vertical"
                                 HorizontalAlignment="Stretch"
                                 Background="WhiteSmoke">
+
+                        <!-- Контекстное меню -->
+                        <StackPanel.ContextMenu>
+                            <ContextMenu>
+                                <MenuItem Header="Копировать инструмент"
+                                          Click="ContextMenu_CopyTool_Click"
+                                          CommandParameter="{Binding}" />
+                            </ContextMenu>
+                        </StackPanel.ContextMenu>
                         <TextBox Text="{Binding Name, Mode=OneWay}"
                                  FontSize="13"
                                  FontWeight="Bold"
@@ -148,14 +226,6 @@
                                  Background="Transparent"
                                  IsReadOnlyCaretVisible="True" />
 
-                        <!-- Контекстное меню -->
-                        <StackPanel.ContextMenu>
-                            <ContextMenu>
-                                <MenuItem Header="Копировать инструмент"
-                                          Click="ContextMenu_CopyTool_Click"
-                                          CommandParameter="{Binding}" />
-                            </ContextMenu>
-                        </StackPanel.ContextMenu>
                     </StackPanel>
                 </DataTemplate>
             </ListBox.ItemTemplate>
@@ -163,20 +233,46 @@
         <Button x:Name="ButtonCopyTags"
                 Content="Копировать теги"
                 HorizontalAlignment="Left"
-                Margin="246,401,0,0"
-                VerticalAlignment="Top"
+                VerticalAlignment="Center"
                 Height="34"
-                Width="105"
-                Click="ButtonCopyTags_Click" />
-        <Label x:Name="LabelToolsExport"
+                Width="118"
+                Click="ButtonCopyTags_Click"
+                Margin="328,0,0,0" />
+        <Label x:Name="ToolsExportTitle"
                Content="Вспомогательное оборудование"
-               HorizontalAlignment="Left"
-               Margin="48,21,0,0"
+               HorizontalContentAlignment="Center"
                VerticalAlignment="Top"
                Height="30"
-               Width="412"
                FontFamily="Verdana"
                FontWeight="Bold"
-               FontSize="16" />
+               FontSize="16"
+               Margin="154,0,171,0" />
+        <Button x:Name="ButtonResetSelection"
+                Content="Снять выделение"
+                VerticalAlignment="Top"
+                Height="30"
+                Click="ButtonResetSelection_Click"
+                Margin="17,12,0,0"
+                HorizontalAlignment="Left"
+                Width="124"
+                Grid.Row="1"
+                Grid.Column="1" />
+        <Label x:Name="ToolsListTitle"
+               Content="Инструменты"
+               HorizontalAlignment="Center"
+               VerticalAlignment="Top"
+               FontWeight="Bold"
+               FontSize="16"
+               Height="30"
+               Width="134"
+               Grid.Column="1" />
+        <Label Content="Тип инструмента"
+               HorizontalAlignment="Left"
+               Margin="374,3,0,0"
+               VerticalAlignment="Top"
+               Grid.Row="1"
+               Grid.Column="1"
+               Height="25"
+               Width="116" />
     </Grid>
 </Window>

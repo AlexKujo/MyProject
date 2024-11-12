@@ -16,6 +16,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using MyProject_NET_8.Apps.TextTemplates;
 
 namespace MyProject_NET_8
 {
@@ -43,8 +44,8 @@ namespace MyProject_NET_8
 
         private void TextPresetsButton_Click(object sender, RoutedEventArgs e)
         {
-            TextTemplatesWindow textPresets = new TextTemplatesWindow();
-            textPresets.Show();
+            TextTemplatesWindow textTemplatesWindow = new TextTemplatesWindow();
+            textTemplatesWindow.Show();
         }
 
         private void ProcedureReverserButton_Click(object sender, RoutedEventArgs e)

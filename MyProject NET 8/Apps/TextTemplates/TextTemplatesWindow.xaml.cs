@@ -19,7 +19,7 @@ using MyProject_NET_8.TextTemplates.AddTool;
 using MyProject_NET_8.TextTemplates.EditToolsList;
 using System.Xml.Linq;
 
-namespace MyProject_NET_8
+namespace MyProject_NET_8.Apps.TextTemplates
 {
     /// <summary>
     /// Логика взаимодействия для TextTemplatesWindow.xaml
@@ -29,13 +29,14 @@ namespace MyProject_NET_8
         private ObservableCollection<MechThread> _threads;
         private ObservableCollection<Tool> _tools;
         private ObservableCollection<Tool> _selectedTools;
-        private ObservableCollection<ToolTagModel> _toolsTagExport;
 
         private string _jsonFilePath;
 
         private ToolFilter _toolFilter;
 
         private Template _template;
+
+        private bool _isSelectionChangeAllowed;
 
         public TextTemplatesWindow()
         {
@@ -52,7 +53,8 @@ namespace MyProject_NET_8
             _threads = LoadJson<MechThread>("Threads");
             _tools = LoadJson<Tool>("Tools");
             _toolFilter = new ToolFilter();
-            _toolsTagExport = new ObservableCollection<ToolTagModel>();
+
+            _isSelectionChangeAllowed = true;
 
             SortToolsList(_tools);
 
@@ -69,7 +71,7 @@ namespace MyProject_NET_8
             ListBoxTools.ItemsSource = _tools;
             ListBoxTools.DisplayMemberPath = "Name";
 
-            ListBoxToolsExport.ItemsSource = _toolsTagExport;
+            ListBoxToolsExport.ItemsSource = _selectedTools;
         }
 
         private void InitializeEvents()
@@ -132,11 +134,6 @@ namespace MyProject_NET_8
             UpdateTemplateText(sender, e);
         }
 
-        private void ComboBoxWrenchType_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            UpdateToolsList();
-        }
-
         private void ComboBoxWrenchSize_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             UpdateToolsList();
@@ -160,34 +157,23 @@ namespace MyProject_NET_8
 
         private void ListBoxTools_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            foreach (Tool tool in e.AddedItems)
+            foreach (var tool in e.AddedItems)
             {
-                if (tool != null)
+                if (_selectedTools.Contains(tool) == false)
                 {
-                    _selectedTools.Add(tool);
+                    _selectedTools.Add((Tool)tool);
                 }
             }
 
-            foreach (Tool tool in e.RemovedItems)
+            foreach (var removedItem in e.RemovedItems)
             {
-                if (tool != null)
+                if (_selectedTools.Contains(removedItem))
                 {
-                    _selectedTools.Remove(tool);
+                    ListBoxTools.SelectedItems.Add(removedItem);
                 }
             }
 
-            UpdateExportList();
             UpdateTemplateText(null, null); // Обновляем текст шаблона
-        }
-
-        private void UpdateExportList()
-        {
-            _toolsTagExport.Clear();
-
-            foreach (Tool tool in _selectedTools)
-            {
-                _toolsTagExport.Add(new ToolTagModel(tool.Name, tool.IdentNumber));
-            }
         }
 
         private void UpdateToolsList()
@@ -261,16 +247,17 @@ namespace MyProject_NET_8
             ComboBoxInputThread.SelectedItem = null;
             ComboBoxToolType.SelectedItem = null;
             ComboBoxWrenchSize.SelectedItem = null;
-
-            ListBoxTools.SelectedItems.Clear();
-
-            _toolsTagExport.Clear();
-            _selectedTools.Clear();
         }
 
-        private void CopyToolsToClipboard(IEnumerable<ToolTagModel> tools)
+        private void ButtonResetSelection_Click(object sender, RoutedEventArgs e)
         {
-            if (_toolsTagExport == null || _toolsTagExport.Count == 0)
+            _selectedTools.Clear();
+            ListBoxTools.SelectedItems.Clear();
+        }
+
+        private void CopyToolsToClipboard(IEnumerable<Tool> tools)
+        {
+            if (_selectedTools == null || _selectedTools.Count == 0)
             {
                 MessageBox.Show("Список инструментов пуст.");
                 return;
@@ -305,9 +292,8 @@ namespace MyProject_NET_8
             NoticeHelper.ShowNotification(CopyNotificationLabel, "Группа инструментов скопированы в буфер обмена.");
         }
 
-        private void CopyToolsToClipboard(ToolTagModel tool)
+        private void CopyToolsToClipboard(Tool tool)
         {
-
             // Получаем XML строку для инструмента
             var tagStructure = tool.GetTagStructure();
             var toolElement = XElement.Parse(tagStructure);
@@ -324,14 +310,16 @@ namespace MyProject_NET_8
 
         private void ContextMenu_CopyTool_Click(object sender, RoutedEventArgs e)
         {
-            if (sender is MenuItem menuItem && menuItem.CommandParameter is ToolTagModel tool)
+            if (sender is MenuItem menuItem && menuItem.CommandParameter is Tool tool)
             {
                 CopyToolsToClipboard(tool); // Вызываем метод для копирования одного инструмента
             }
         }
         private void ButtonCopyTags_Click(object sender, RoutedEventArgs e)
         {
-            CopyToolsToClipboard(_toolsTagExport);
+            CopyToolsToClipboard(_selectedTools);
         }
+
+
     }
 }
