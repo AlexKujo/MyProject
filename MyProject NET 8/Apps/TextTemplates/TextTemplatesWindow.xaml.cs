@@ -26,7 +26,7 @@ namespace MyProject_NET_8
     /// </summary>
     public partial class TextTemplatesWindow : Window
     {
-        private ObservableCollection<ThreadType> _threads;
+        private ObservableCollection<MechThread> _threads;
         private ObservableCollection<Tool> _tools;
         private ObservableCollection<Tool> _selectedTools;
         private ObservableCollection<ToolTagModel> _toolsTagExport;
@@ -49,7 +49,7 @@ namespace MyProject_NET_8
             _jsonFilePath = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Resources");
             _selectedTools = new ObservableCollection<Tool>();
             _template = new Template();
-            _threads = LoadJson<ThreadType>("Threads");
+            _threads = LoadJson<MechThread>("Threads");
             _tools = LoadJson<Tool>("Tools");
             _toolFilter = new ToolFilter();
             _toolsTagExport = new ObservableCollection<ToolTagModel>();
@@ -206,11 +206,11 @@ namespace MyProject_NET_8
             ListBoxTools.ItemsSource = filteredTools.ToList();
         }
 
-        private float? GetThreadWrenchSize() => (ComboBoxInputThread.SelectedItem as ThreadType)?.WrenchSize;
+        private float? GetThreadWrenchSize() => (ComboBoxInputThread.SelectedItem as MechThread)?.WrenchSize;
 
         private void UpdateTemplateText(object sender, RoutedEventArgs e)
         {
-            var selectedThread = (ThreadType)ComboBoxInputThread.SelectedItem;
+            var selectedThread = (MechThread)ComboBoxInputThread.SelectedItem;
             var selectedToolsNames = _selectedTools.Select(tool => tool.Name).ToList();
 
             _template.ImpactPoints = ImpactPointsTextBox.Text;

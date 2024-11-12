@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MyProject_NET_8.TextTemplates
 {
-    internal class ThreadType
+    internal class MechThread
     {
         public float MinValue { get; private set; }
 
@@ -18,7 +18,7 @@ namespace MyProject_NET_8.TextTemplates
         public int WrenchSize { get; private set; }
 
         [JsonConstructor]
-        public ThreadType(float minValue, float maxValue, string designation, int wrenchSize)
+        public MechThread(float minValue, float maxValue, string designation, int wrenchSize)
         {
             MinValue = minValue;
             MaxValue = maxValue;

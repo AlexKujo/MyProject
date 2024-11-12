@@ -4,20 +4,22 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace MyProject_NET_8
 {
     internal static class VersionInfo
     {
-        public static string UpdateRequired { get; private set; } = "";
-        public static string NoUpdateRequired { get; private set; }
-
-        public static string GetCurrentVersion()
+        public static string GetVersion()
         {
-            Assembly assembly = Assembly.GetExecutingAssembly();
-            Version version = assembly.GetName().Version;
+            string version = Assembly.GetExecutingAssembly().GetCustomAttribute<AssemblyInformationalVersionAttribute>().InformationalVersion;
 
-            return version.ToString();
+            if (version != string.Empty)
+            {
+                return version;
+            }
+
+            return version;
         }
     }
 }
