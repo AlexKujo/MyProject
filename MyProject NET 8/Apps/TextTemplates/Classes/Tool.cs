@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MyProject_NET_8.Apps.TextTemplates.Classes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,8 +9,25 @@ using System.Xml.Linq;
 
 namespace MyProject_NET_8.TextTemplates
 {
-    public class Tool
+    public class Tool : ITaggable
     {
+
+
+        [JsonConstructor]
+
+        public Tool(string name, string identNumber, float? wrenchSize = null, int? maxMoment = null, int? minMoment = null, string length = null, string socketSize = null, string type = null, string category = null)
+        {
+            Name = name;
+            IdentNumber = identNumber;
+            Category = category;
+            Type = type;
+            WrenchSize = wrenchSize;
+            Length = length;
+            SocketSize = socketSize;
+            MaxMoment = maxMoment;
+            MinMoment = minMoment;
+        }
+
         public string Name { get; private set; }
 
         public string IdentNumber { get; private set; }
@@ -35,20 +53,9 @@ namespace MyProject_NET_8.TextTemplates
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public int? MinMoment { get; private set; }
 
-        [JsonConstructor]
+        public XElement RootElement { get; private set; } = new XElement("reqSupportEquips");
 
-        public Tool(string name, string identNumber, float? wrenchSize = null, int? maxMoment = null, int? minMoment = null, string length = null, string socketSize = null, string type = null, string category = null)
-        {
-            Name = name;
-            IdentNumber = identNumber;
-            Category = category;
-            Type = type;
-            WrenchSize = wrenchSize;
-            Length = length;
-            SocketSize = socketSize;
-            MaxMoment = maxMoment;
-            MinMoment = minMoment;
-        }
+        public XElement GroupDescription { get; private set; } = new XElement("supportEquipDescrGroup");
 
         public string GetTagStructure()
         {
@@ -66,5 +73,7 @@ namespace MyProject_NET_8.TextTemplates
             // Возвращаем строку XML с отступами и переносами строк
             return supportEquipDescr.ToString(SaveOptions.None);
         }
+
+        public string GetCopyMessage() => "Инструмент скопирован в буфер обмена";
     }
 }

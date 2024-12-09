@@ -6,23 +6,25 @@ using System.Threading.Tasks;
 
 namespace MyProject_NET_8.TextTemplates
 {
+    public static class Converter
+    {
+        public static float ConvertMomentToHm(float valueInKgF) => (float)Math.Round(valueInKgF * 9.80665, 0);
+    }
+
     internal class Template
     {
         public float MinMomentKgSFM { get; set; }
 
         public float MaxMomentKgSFM { get; set; }
 
-        public double MinMomentHM => ConvertMoment(MinMomentKgSFM);
+        public float MinMomentHM => Converter.ConvertMomentToHm(MinMomentKgSFM);
 
-        public double MaxMomentHM => ConvertMoment(MaxMomentKgSFM);
+        public float MaxMomentHM => Converter.ConvertMomentToHm(MaxMomentKgSFM);
 
         public string ImpactPoints { get; set; }
 
-        public string Text { get; private set; }
-
         public List<string> Tools { get; set; } = new List<string>();
 
-        private double ConvertMoment(float valueInKgF) => Math.Round(valueInKgF * 9.80664999999931, 1);
 
         private string CapitalizeFirstLetter(string text)
         {

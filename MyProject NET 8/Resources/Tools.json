@@ -512,14 +512,18 @@
     "IdentNumber": "TOOL_Kl_mom_pred_rogk_Mmax2100Nm_14x18",
     "Category": "wrenchMoment",
     "Type": "openEnd",
-    "SocketSize": "14x18"
+    "SocketSize": "14x18",
+    "MaxMoment": 2100,
+    "MinMoment": 0
   },
   {
     "Name": "Ключ моментный предельный рожковый до 2100Нм размер посадочного привода 9х12 (предел допуст осн.погрешн. +/-3%)",
     "IdentNumber": "TOOL_Kl_mom_pred_rogk_Mmax2100Nm_9x12",
     "Category": "wrenchMoment",
     "Type": "openEnd",
-    "SocketSize": "9x12"
+    "SocketSize": "9x12",
+    "MaxMoment": 2100,
+    "MinMoment": 0
   },
   {
     "Name": "Ключ моментный предельный св. 30 Нм до 135 Нм (предел допуст. осн.погрешности +/- 4% )",
@@ -736,31 +740,31 @@
   {
     "Name": "Смазка универсальная, очищающая, противокоррозионная",
     "IdentNumber": "Material_Smazka_universalnaya",
-    "Category": "other"
+    "Type": "other"
   },
   {
     "Name": "Удлинитель 1/2 L-125",
     "IdentNumber": "TOOL_2-8044125",
-    "Category": "other"
+    "Type": "other"
   },
   {
     "Name": "Удлинитель 1/2 L-250",
     "IdentNumber": "TOOL_2-8044250",
-    "Category": "other"
+    "Type": "other"
   },
   {
     "Name": "Щетка металлическая",
     "IdentNumber": "TOOL_TTL_6-7",
-    "Category": "other"
+    "Type": "other"
   },
   {
     "Name": "ьюльюлю",
     "IdentNumber": "ьлюьлюьлю",
-    "Category": "other"
+    "Type": "other"
   },
   {
     "Name": "еееее",
     "IdentNumber": "оооо",
-    "Category": "other"
+    "Type": "other"
   }
 ]

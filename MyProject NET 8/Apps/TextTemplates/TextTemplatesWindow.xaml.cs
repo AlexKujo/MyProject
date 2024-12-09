@@ -1,23 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
+﻿
+using MyProject_NET_8.Apps.TextTemplates;
+using MyProject_NET_8.Apps.TextTemplates.Classes;
+using MyProject_NET_8.TextTemplates;
+using MyProject_NET_8.TextTemplates.EditToolsList;
 using System.Collections.ObjectModel;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Text.Json;
-using System.Text.Json.Serialization;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
-using MyProject_NET_8.TextTemplates;
-using MyProject_NET_8.TextTemplates.AddTool;
-using MyProject_NET_8.TextTemplates.EditToolsList;
-using System.Xml.Linq;
 
 namespace MyProject_NET_8.Apps.TextTemplates
 {
@@ -29,10 +18,10 @@ namespace MyProject_NET_8.Apps.TextTemplates
         private ObservableCollection<MechThread> _threads;
         private ObservableCollection<Tool> _tools;
         private ObservableCollection<Tool> _selectedTools;
+        private ObservableCollection<Supply> _selectedSupplies;
+        private ObservableCollection<Supply> _supplies;
 
         private string _jsonFilePath;
-
-        private ToolFilter _toolFilter;
 
         private Template _template;
 
@@ -48,29 +37,27 @@ namespace MyProject_NET_8.Apps.TextTemplates
         private void InitializeData()
         {
             _jsonFilePath = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Resources");
+
+            _threads = JsonLoader.Load<MechThread>(_jsonFilePath, "Threads");
+            _tools = JsonLoader.Load<Tool>(_jsonFilePath, "Tools");
+            _supplies = JsonLoader.Load<Supply>(_jsonFilePath, "Supplies");
+
             _selectedTools = new ObservableCollection<Tool>();
+            _selectedSupplies = new ObservableCollection<Supply>();
+
             _template = new Template();
-            _threads = LoadJson<MechThread>("Threads");
-            _tools = LoadJson<Tool>("Tools");
-            _toolFilter = new ToolFilter();
 
             _isSelectionChangeAllowed = true;
 
-            SortToolsList(_tools);
+            ToolsManager.SortToolsList(_tools);
 
-            var sizes = _tools.Where(tool => tool.WrenchSize > 0)
-                     .Select(tool => tool.WrenchSize)
-                     .Distinct()
-                     .OrderBy(size => size)
-                     .ToList();
-            ComboBoxWrenchSize.ItemsSource = sizes;
+            ComboBoxWrenchSize.ItemsSource = ToolsManager.GetWrenchSizes(_tools);
 
             ComboBoxInputThread.ItemsSource = _threads;
             ComboBoxInputThread.DisplayMemberPath = "Designation";
 
             ListBoxTools.ItemsSource = _tools;
-            ListBoxTools.DisplayMemberPath = "Name";
-
+            ListBoxSupplies.ItemsSource = _supplies;
             ListBoxToolsExport.ItemsSource = _selectedTools;
         }
 
@@ -85,30 +72,6 @@ namespace MyProject_NET_8.Apps.TextTemplates
             RemoveCheckBox.Unchecked += UpdateTemplateText;
 
             ImpactPointsTextBox.TextChanged += UpdateTemplateText;
-        }
-
-        private ObservableCollection<T> LoadJson<T>(string jsonName)
-        {
-            string jsonPath = System.IO.Path.Combine(_jsonFilePath, jsonName + ".json");
-
-            string jsonString = File.ReadAllText(jsonPath);
-
-            return JsonSerializer.Deserialize<ObservableCollection<T>>(jsonString);
-        }
-
-        private void SortToolsList(ObservableCollection<Tool> tools)
-        {
-            // Создаем отсортированный список
-            var sortedList = tools.OrderBy(tool => tool.Name)
-                                  .ThenBy(tool => tool.WrenchSize)
-                                  .ToList();
-
-            // Очищаем коллекцию и добавляем отсортированные элементы
-            tools.Clear();
-            foreach (var tool in sortedList)
-            {
-                tools.Add(tool);
-            }
         }
 
         private void CheckBox_Checked(object sender, RoutedEventArgs e)
@@ -146,8 +109,26 @@ namespace MyProject_NET_8.Apps.TextTemplates
 
         private void ComboBoxInputThread_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            ComboBoxToolType.SelectedItem = null;
+            ComboBoxWrenchSize.SelectedItem = null;
+
+            if (ComboBoxInputThread.SelectedItem == null)
+            {
+                ComboBoxToolType.IsEnabled = true;
+                ComboBoxWrenchSize.IsEnabled = true;
+            }
+            else
+            {
+                ComboBoxToolType.IsEnabled = false;
+                ComboBoxWrenchSize.IsEnabled = false;
+            }
+
+            if (MomentFilterCheckBox.IsChecked == true || WrenchSizeFilterCheckBox.IsChecked == true)
+            {
+                UpdateToolsList();
+            }
+
             UpdateTemplateText(sender, e);
-            UpdateToolsList();
         }
 
         private void ImpactPointsTextBox_PreviewTextInput(object sender, TextCompositionEventArgs e)
@@ -155,25 +136,47 @@ namespace MyProject_NET_8.Apps.TextTemplates
             e.Handled = char.IsDigit(e.Text, 0) == false;
         }
 
-        private void ListBoxTools_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void ListBox_SelectionChanged<T>(ListBox listBox, ObservableCollection<T> selectedItems, SelectionChangedEventArgs e) where T : class
         {
-            foreach (var tool in e.AddedItems)
+            foreach (var item in e.AddedItems)
             {
-                if (_selectedTools.Contains(tool) == false)
+                if (item is T castedItem && selectedItems.Contains(castedItem) == false)
                 {
-                    _selectedTools.Add((Tool)tool);
+                    selectedItems.Add(castedItem);
                 }
             }
 
-            foreach (var removedItem in e.RemovedItems)
+            foreach (var item in e.RemovedItems)
             {
-                if (_selectedTools.Contains(removedItem))
+                if (item is T castedItem && selectedItems.Contains(castedItem))
                 {
-                    ListBoxTools.SelectedItems.Add(removedItem);
+                    listBox.SelectedItems.Add(castedItem);
                 }
             }
 
             UpdateTemplateText(null, null); // Обновляем текст шаблона
+        }
+
+        private void ListBoxTools_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            ListBox_SelectionChanged((ListBox)sender, _selectedTools, e);
+        }
+
+        private void ListBoxSupplies_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            ListBox_SelectionChanged((ListBox)sender, _selectedSupplies, e);
+        }
+
+        private void TabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (TabTools.IsSelected)
+            {
+                ListBoxToolsExport.ItemsSource = _selectedTools;
+            }
+            else if (TabSupplies.IsSelected)
+            {
+                ListBoxToolsExport.ItemsSource = _selectedSupplies;
+            }
         }
 
         private void UpdateToolsList()
@@ -181,18 +184,25 @@ namespace MyProject_NET_8.Apps.TextTemplates
             // Получаем выбранные значения
             var selectedType = (ComboBoxToolType.SelectedItem as ComboBoxItem)?.Tag as string;
             float? wrenchSize = ComboBoxWrenchSize.SelectedItem as float?;
-            float? threadWrenchSize = GetThreadWrenchSize();
-            bool isThreadFilterEnabled = ThreadFilterCheckBox.IsChecked == true;
+            bool isWrenchSizeFilterEnabled = (bool)WrenchSizeFilterCheckBox.IsChecked;
+            bool isMomentFilterEnabled = (bool)MomentFilterCheckBox.IsChecked;
+            MechThread selectedThread = ComboBoxInputThread.SelectedItem as MechThread;
 
             // Применяем фильтрацию с помощью ToolFilter
             var filteredTools = _tools.AsEnumerable();
-            filteredTools = _toolFilter.FilterTools(filteredTools, selectedType, wrenchSize, threadWrenchSize, isThreadFilterEnabled);
+
+            if (selectedThread != null && (isWrenchSizeFilterEnabled || isMomentFilterEnabled))
+            {
+                filteredTools = ToolsManager.FilterTools(filteredTools, selectedThread, isWrenchSizeFilterEnabled, isMomentFilterEnabled);
+            }
+            else
+            {
+                filteredTools = ToolsManager.FilterTools(filteredTools, selectedType, wrenchSize);
+            }
 
             // Обновляем ListBox
             ListBoxTools.ItemsSource = filteredTools.ToList();
         }
-
-        private float? GetThreadWrenchSize() => (ComboBoxInputThread.SelectedItem as MechThread)?.WrenchSize;
 
         private void UpdateTemplateText(object sender, RoutedEventArgs e)
         {
@@ -233,7 +243,7 @@ namespace MyProject_NET_8.Apps.TextTemplates
         {
             WindowEditToolsList windowEditToolsList = new WindowEditToolsList(_tools);
             windowEditToolsList.ShowDialog();
-            SortToolsList(_tools);
+            ToolsManager.SortToolsList(_tools);
         }
 
         private void ButtonResetAll_Click(object sender, RoutedEventArgs e)
@@ -242,7 +252,7 @@ namespace MyProject_NET_8.Apps.TextTemplates
 
             InstallationCheckBox.IsChecked = false;
             RemoveCheckBox.IsChecked = false;
-            ThreadFilterCheckBox.IsChecked = false;
+            WrenchSizeFilterCheckBox.IsChecked = false;
 
             ComboBoxInputThread.SelectedItem = null;
             ComboBoxToolType.SelectedItem = null;
@@ -252,74 +262,22 @@ namespace MyProject_NET_8.Apps.TextTemplates
         private void ButtonResetSelection_Click(object sender, RoutedEventArgs e)
         {
             _selectedTools.Clear();
+            _selectedSupplies.Clear();
             ListBoxTools.SelectedItems.Clear();
-        }
-
-        private void CopyToolsToClipboard(IEnumerable<Tool> tools)
-        {
-            if (_selectedTools == null || _selectedTools.Count == 0)
-            {
-                MessageBox.Show("Список инструментов пуст.");
-                return;
-            }
-
-            // Создание корневого элемента
-            var reqSupportEquips = new XElement("reqSupportEquips");
-
-            // Создание группы описаний инструментов
-            var supportEquipDescrGroup = new XElement("supportEquipDescrGroup");
-
-            // Добавление каждого инструмента в XML
-            foreach (var tool in tools)
-            {
-                // Получаем XML строку для каждого инструмента
-                var tagStructure = tool.GetTagStructure();
-                // Добавляем XML строку как элемент
-                var toolElement = XElement.Parse(tagStructure);
-                supportEquipDescrGroup.Add(toolElement);
-            }
-
-            // Добавление группы описаний в корневой элемент
-            reqSupportEquips.Add(supportEquipDescrGroup);
-
-            // Формирование финального XML
-            var document = new XDocument(reqSupportEquips);
-            var xmlString = document.ToString();
-
-            // Копируем результат в буфер обмена
-            Clipboard.SetText(xmlString);
-
-            NoticeHelper.ShowNotification(CopyNotificationLabel, "Группа инструментов скопированы в буфер обмена.");
-        }
-
-        private void CopyToolsToClipboard(Tool tool)
-        {
-            // Получаем XML строку для инструмента
-            var tagStructure = tool.GetTagStructure();
-            var toolElement = XElement.Parse(tagStructure);
-
-            // Формирование финального XML только для одного инструмента
-            var document = new XDocument(toolElement);
-            var xmlString = document.ToString();
-
-            // Копируем результат в буфер обмена
-            Clipboard.SetText(xmlString);
-
-            NoticeHelper.ShowNotification(CopyNotificationLabel, "Инструмент скопирован в буфер обмена.");
+            ListBoxSupplies.SelectedItems.Clear();
         }
 
         private void ContextMenu_CopyTool_Click(object sender, RoutedEventArgs e)
         {
-            if (sender is MenuItem menuItem && menuItem.CommandParameter is Tool tool)
+            if (sender is MenuItem menuItem && menuItem.CommandParameter is ITaggable item)
             {
-                CopyToolsToClipboard(tool); // Вызываем метод для копирования одного инструмента
+                ClipboardHelper.Copy(item, CopyNotificationLabel); // Вызываем метод для копирования одного инструмента
             }
         }
+
         private void ButtonCopyTags_Click(object sender, RoutedEventArgs e)
         {
-            CopyToolsToClipboard(_selectedTools);
+            ClipboardHelper.CopyAll(_selectedTools, CopyNotificationLabel);
         }
-
-
     }
 }

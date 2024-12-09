@@ -18,11 +18,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Resources\Supplies.json" />
     <None Remove="Resources\Threads.json" />
     <None Remove="Resources\Tools.json" />
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="Resources\Supplies.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Resources\Threads.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
