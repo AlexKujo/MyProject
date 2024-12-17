@@ -1,0 +1,770 @@
+[
+  {
+    "Name": "6-гранная головка S=10 1/2",
+    "IdentNumber": "TOOL2-642230-10",
+    "Category": "head",
+    "Type": "ratchet",
+    "WrenchSize": 10,
+    "Length": "1/2"
+  },
+  {
+    "Name": "6-гранная головка S=10 1/4",
+    "IdentNumber": "TOOL2-631020-10",
+    "Category": "head",
+    "Type": "ratchet",
+    "WrenchSize": 10,
+    "Length": "1/4"
+  },
+  {
+    "Name": "6-гранная головка S=11 1/2",
+    "IdentNumber": "TOOL2-642230-11",
+    "Category": "head",
+    "Type": "ratchet",
+    "WrenchSize": 11,
+    "Length": "1/2"
+  },
+  {
+    "Name": "6-гранная головка S=11 1/4",
+    "IdentNumber": "TOOL2-631020-11",
+    "Category": "head",
+    "Type": "ratchet",
+    "WrenchSize": 11,
+    "Length": "1/4"
+  },
+  {
+    "Name": "6-гранная головка S=12 1/2",
+    "IdentNumber": "TOOL2-642230-12",
+    "Category": "head",
+    "Type": "ratchet",
+    "WrenchSize": 12,
+    "Length": "1/2"
+  },
+  {
+    "Name": "6-гранная головка S=12 1/4",
+    "IdentNumber": "TOOL2-631020-12",
+    "Category": "head",
+    "Type": "ratchet",
+    "WrenchSize": 12,
+    "Length": "1/4"
+  },
+  {
+    "Name": "6-гранная головка S=13 1/2",
+    "IdentNumber": "TOOL2-642230-13",
+    "Category": "head",
+    "Type": "ratchet",
+    "WrenchSize": 13,
+    "Length": "1/2"
+  },
+  {
+    "Name": "6-гранная головка S=13 1/4",
+    "IdentNumber": "TOOL2-631020-13",
+    "Category": "head",
+    "Type": "ratchet",
+    "WrenchSize": 13,
+    "Length": "1/4"
+  },
+  {
+    "Name": "6-гранная головка S=14 1/2",
+    "IdentNumber": "TOOL2-642230-14",
+    "Category": "head",
+    "Type": "ratchet",
+    "WrenchSize": 14,
+    "Length": "1/2"
+  },
+  {
+    "Name": "6-гранная головка S=14 1/4",
+    "IdentNumber": "TOOL2-631020-14",
+    "Category": "head",
+    "Type": "ratchet",
+    "WrenchSize": 14,
+    "Length": "1/4"
+  },
+  {
+    "Name": "6-гранная головка S=15 1/2",
+    "IdentNumber": "TOOL2-642230-15",
+    "Category": "head",
+    "Type": "ratchet",
+    "WrenchSize": 15,
+    "Length": "1/2"
+  },
+  {
+    "Name": "6-гранная головка S=16 1/2",
+    "IdentNumber": "TOOL2-642230-16",
+    "Category": "head",
+    "Type": "ratchet",
+    "WrenchSize": 16,
+    "Length": "1/2"
+  },
+  {
+    "Name": "6-гранная головка S=17 1/2",
+    "IdentNumber": "TOOL2-642230-17",
+    "Category": "head",
+    "Type": "ratchet",
+    "WrenchSize": 17,
+    "Length": "1/2"
+  },
+  {
+    "Name": "6-гранная головка S=18 1/2",
+    "IdentNumber": "TOOL2-642230-18",
+    "Category": "head",
+    "Type": "ratchet",
+    "WrenchSize": 18,
+    "Length": "1/2"
+  },
+  {
+    "Name": "6-гранная головка S=19 1/2",
+    "IdentNumber": "TOOL2-642230-19",
+    "Category": "head",
+    "Type": "ratchet",
+    "WrenchSize": 19,
+    "Length": "1/2"
+  },
+  {
+    "Name": "6-гранная головка S=20 1/2",
+    "IdentNumber": "TOOL2-642230-20",
+    "Category": "head",
+    "Type": "ratchet",
+    "WrenchSize": 20,
+    "Length": "1/2"
+  },
+  {
+    "Name": "6-гранная головка S=21 1/2",
+    "IdentNumber": "TOOL2-642230-21",
+    "Category": "head",
+    "Type": "ratchet",
+    "WrenchSize": 21,
+    "Length": "1/2"
+  },
+  {
+    "Name": "6-гранная головка S=22 1/2",
+    "IdentNumber": "TOOL2-642230-22",
+    "Category": "head",
+    "Type": "ratchet",
+    "WrenchSize": 22,
+    "Length": "1/2"
+  },
+  {
+    "Name": "6-гранная головка S=23 1/2",
+    "IdentNumber": "TOOL2-642230-23",
+    "Category": "head",
+    "Type": "ratchet",
+    "WrenchSize": 23,
+    "Length": "1/2"
+  },
+  {
+    "Name": "6-гранная головка S=24 1/2",
+    "IdentNumber": "TOOL2-642230-24",
+    "Category": "head",
+    "Type": "ratchet",
+    "WrenchSize": 24,
+    "Length": "1/2"
+  },
+  {
+    "Name": "6-гранная головка S=25 1/2",
+    "IdentNumber": "TOOL2-642230-25",
+    "Category": "head",
+    "Type": "ratchet",
+    "WrenchSize": 25,
+    "Length": "1/2"
+  },
+  {
+    "Name": "6-гранная головка S=26 1/2",
+    "IdentNumber": "TOOL2-642230-26",
+    "Category": "head",
+    "Type": "ratchet",
+    "WrenchSize": 26,
+    "Length": "1/2"
+  },
+  {
+    "Name": "6-гранная головка S=27 1/2",
+    "IdentNumber": "TOOL2-642230-27",
+    "Category": "head",
+    "Type": "ratchet",
+    "WrenchSize": 27,
+    "Length": "1/2"
+  },
+  {
+    "Name": "6-гранная головка S=28 1/2",
+    "IdentNumber": "TOOL2-642230-28",
+    "Category": "head",
+    "Type": "ratchet",
+    "WrenchSize": 28,
+    "Length": "1/2"
+  },
+  {
+    "Name": "6-гранная головка S=30 1/2",
+    "IdentNumber": "TOOL2-642230-30",
+    "Category": "head",
+    "Type": "ratchet",
+    "WrenchSize": 30,
+    "Length": "1/2"
+  },
+  {
+    "Name": "6-гранная головка S=32 1/2",
+    "IdentNumber": "TOOL2-642230-32",
+    "Category": "head",
+    "Type": "ratchet",
+    "WrenchSize": 32,
+    "Length": "1/2"
+  },
+  {
+    "Name": "6-гранная головка S=4 1/4",
+    "IdentNumber": "TOOL2-631020-4",
+    "Category": "head",
+    "Type": "ratchet",
+    "WrenchSize": 4,
+    "Length": "1/4"
+  },
+  {
+    "Name": "6-гранная головка S=4.5 1/4",
+    "IdentNumber": "TOOL2-631020-4.5",
+    "Category": "head",
+    "Type": "ratchet",
+    "WrenchSize": 4.5,
+    "Length": "1/4"
+  },
+  {
+    "Name": "6-гранная головка S=5 1/4",
+    "IdentNumber": "TOOL2-631020-5",
+    "Category": "head",
+    "Type": "ratchet",
+    "WrenchSize": 5,
+    "Length": "1/4"
+  },
+  {
+    "Name": "6-гранная головка S=5.5 1/4",
+    "IdentNumber": "TOOL2-631020-5.5",
+    "Category": "head",
+    "Type": "ratchet",
+    "WrenchSize": 5.5,
+    "Length": "1/4"
+  },
+  {
+    "Name": "6-гранная головка S=6 1/4",
+    "IdentNumber": "TOOL2-631020-6",
+    "Category": "head",
+    "Type": "ratchet",
+    "WrenchSize": 6,
+    "Length": "1/4"
+  },
+  {
+    "Name": "6-гранная головка S=7 1/2",
+    "IdentNumber": "TOOL2-642230-7",
+    "Category": "head",
+    "Type": "ratchet",
+    "WrenchSize": 7,
+    "Length": "1/2"
+  },
+  {
+    "Name": "6-гранная головка S=7 1/4",
+    "IdentNumber": "TOOL2-631020-7",
+    "Category": "head",
+    "Type": "ratchet",
+    "WrenchSize": 7,
+    "Length": "1/4"
+  },
+  {
+    "Name": "6-гранная головка S=8 1/2",
+    "IdentNumber": "TOOL2-642230-8",
+    "Category": "head",
+    "Type": "ratchet",
+    "WrenchSize": 8,
+    "Length": "1/2"
+  },
+  {
+    "Name": "6-гранная головка S=8 1/4",
+    "IdentNumber": "TOOL2-631020-8",
+    "Category": "head",
+    "Type": "ratchet",
+    "WrenchSize": 8,
+    "Length": "1/4"
+  },
+  {
+    "Name": "6-гранная головка S=9 1/2",
+    "IdentNumber": "TOOL2-642230-9",
+    "Category": "head",
+    "Type": "ratchet",
+    "WrenchSize": 9,
+    "Length": "1/2"
+  },
+  {
+    "Name": "6-гранная головка S=9 1/4",
+    "IdentNumber": "TOOL2-631020-9",
+    "Category": "head",
+    "Type": "ratchet",
+    "WrenchSize": 9,
+    "Length": "1/4"
+  },
+  {
+    "Name": "dvxdvxdv",
+    "IdentNumber": "43534636",
+    "Category": "other"
+  },
+  {
+    "Name": "Ключ КГК 06",
+    "IdentNumber": "TOOL_2-614800-06",
+    "Category": "wrench",
+    "Type": "openEnd",
+    "WrenchSize": 6
+  },
+  {
+    "Name": "Ключ КГК 07",
+    "IdentNumber": "TOOL_2-614800-07",
+    "Category": "wrench",
+    "Type": "openEnd",
+    "WrenchSize": 7
+  },
+  {
+    "Name": "Ключ КГК 10",
+    "IdentNumber": "TOOL_2-614800-10",
+    "Category": "wrench",
+    "Type": "openEnd",
+    "WrenchSize": 10
+  },
+  {
+    "Name": "Ключ КГК 11",
+    "IdentNumber": "TOOL_2-614800-11",
+    "Category": "wrench",
+    "Type": "openEnd",
+    "WrenchSize": 11
+  },
+  {
+    "Name": "Ключ КГК 12",
+    "IdentNumber": "TOOL_2-614800-12",
+    "Category": "wrench",
+    "Type": "openEnd",
+    "WrenchSize": 12
+  },
+  {
+    "Name": "Ключ КГК 13",
+    "IdentNumber": "TOOL_2-614800-13",
+    "Category": "wrench",
+    "Type": "openEnd",
+    "WrenchSize": 13
+  },
+  {
+    "Name": "Ключ КГК 14",
+    "IdentNumber": "TOOL_2-614800-14",
+    "Category": "wrench",
+    "Type": "openEnd",
+    "WrenchSize": 14
+  },
+  {
+    "Name": "Ключ КГК 15",
+    "IdentNumber": "TOOL_2-614800-15",
+    "Category": "wrench",
+    "Type": "openEnd",
+    "WrenchSize": 15
+  },
+  {
+    "Name": "Ключ КГК 16",
+    "IdentNumber": "TOOL_2-614800-16",
+    "Category": "wrench",
+    "Type": "openEnd",
+    "WrenchSize": 16
+  },
+  {
+    "Name": "Ключ КГК 17",
+    "IdentNumber": "TOOL_2-614800-17",
+    "Category": "wrench",
+    "Type": "openEnd",
+    "WrenchSize": 17
+  },
+  {
+    "Name": "Ключ КГК 18",
+    "IdentNumber": "TOOL_2-614800-18",
+    "Category": "wrench",
+    "Type": "openEnd",
+    "WrenchSize": 18
+  },
+  {
+    "Name": "Ключ КГК 19",
+    "IdentNumber": "TOOL_2-614800-19",
+    "Category": "wrench",
+    "Type": "openEnd",
+    "WrenchSize": 19
+  },
+  {
+    "Name": "Ключ КГК 20",
+    "IdentNumber": "TOOL_2-614800-20",
+    "Category": "wrench",
+    "Type": "openEnd",
+    "WrenchSize": 20
+  },
+  {
+    "Name": "Ключ КГК 21",
+    "IdentNumber": "TOOL_2-614800-21",
+    "Category": "wrench",
+    "Type": "openEnd",
+    "WrenchSize": 21
+  },
+  {
+    "Name": "Ключ КГК 22",
+    "IdentNumber": "TOOL_2-614800-22",
+    "Category": "wrench",
+    "Type": "openEnd",
+    "WrenchSize": 22
+  },
+  {
+    "Name": "Ключ КГК 24",
+    "IdentNumber": "TOOL_2-614800-24",
+    "Category": "wrench",
+    "Type": "openEnd",
+    "WrenchSize": 24
+  },
+  {
+    "Name": "Ключ КГК 27",
+    "IdentNumber": "TOOL_2-614800-27",
+    "Category": "wrench",
+    "Type": "openEnd",
+    "WrenchSize": 27
+  },
+  {
+    "Name": "Ключ КГК 30",
+    "IdentNumber": "TOOL_2-614800-30",
+    "Category": "wrench",
+    "Type": "openEnd",
+    "WrenchSize": 30
+  },
+  {
+    "Name": "Ключ КГК 32",
+    "IdentNumber": "TOOL_2-614800-32",
+    "Category": "wrench",
+    "Type": "openEnd",
+    "WrenchSize": 32
+  },
+  {
+    "Name": "Ключ КГК 34",
+    "IdentNumber": "TOOL_2-614800-34",
+    "Category": "wrench",
+    "Type": "openEnd",
+    "WrenchSize": 34
+  },
+  {
+    "Name": "Ключ КГК 36",
+    "IdentNumber": "TOOL_2-614800-36",
+    "Category": "wrench",
+    "Type": "openEnd",
+    "WrenchSize": 36
+  },
+  {
+    "Name": "Ключ КГК 38",
+    "IdentNumber": "TOOL_2-614800-38",
+    "Category": "wrench",
+    "Type": "openEnd",
+    "WrenchSize": 38
+  },
+  {
+    "Name": "Ключ КГК 41",
+    "IdentNumber": "TOOL_2-614800-41",
+    "Category": "wrench",
+    "Type": "openEnd",
+    "WrenchSize": 41
+  },
+  {
+    "Name": "Ключ КГК 46",
+    "IdentNumber": "TOOL_2-614800-46",
+    "Category": "wrench",
+    "Type": "openEnd",
+    "WrenchSize": 46
+  },
+  {
+    "Name": "Ключ КГК 50",
+    "IdentNumber": "TOOL_2-614800-50",
+    "Category": "wrench",
+    "Type": "openEnd",
+    "WrenchSize": 50
+  },
+  {
+    "Name": "Ключ моментный предельный до 30 Нм включ (предел допуст. осн.погрешн: Ммах не более 10Нм- +/- 6%; Ммах не менее 10Нм - +/- 4% )",
+    "IdentNumber": "TOOL_Kl_mom_pred_Mmax_do30NmGOST33530-2015",
+    "Category": "wrenchMoment",
+    "Type": "ratchet",
+    "MaxMoment": 30,
+    "MinMoment": 0
+  },
+  {
+    "Name": "Ключ моментный предельный от 1000Нм до 2700Нм (предел допуст. осн.погрешности +/- 4% )",
+    "IdentNumber": "TOOL_Kl_mom_pred_Mmax_ot_1000Nm_do_2700NmGOST33530-2015",
+    "Category": "wrenchMoment",
+    "Type": "ratchet",
+    "MaxMoment": 2700,
+    "MinMoment": 1000
+  },
+  {
+    "Name": "Ключ моментный предельный от 135Нм до 340Нм (предел допуст. осн.погрешности +/- 4% )",
+    "IdentNumber": "TOOL_Kl_mom_pred_Mmax_ot_135Nm_do_340NmGOST33530-2015",
+    "Category": "wrenchMoment",
+    "Type": "ratchet",
+    "MaxMoment": 340,
+    "MinMoment": 135
+  },
+  {
+    "Name": "Ключ моментный предельный от 340Нм до 1000Нм (предел допуст. осн.погрешности +/- 4% )",
+    "IdentNumber": "TOOL_Kl_mom_pred_Mmax_ot_340Nm_do_1000NmGOST33530-2015",
+    "Category": "wrenchMoment",
+    "Type": "ratchet",
+    "MaxMoment": 1000,
+    "MinMoment": 340
+  },
+  {
+    "Name": "Ключ моментный предельный рожковый до 2100Нм размер посадочного привода 14х18 (предел допуст осн.погрешн. +/-3%)",
+    "IdentNumber": "TOOL_Kl_mom_pred_rogk_Mmax2100Nm_14x18",
+    "Category": "wrenchMoment",
+    "Type": "openEnd",
+    "SocketSize": "14x18",
+    "MaxMoment": 2100,
+    "MinMoment": 0
+  },
+  {
+    "Name": "Ключ моментный предельный рожковый до 2100Нм размер посадочного привода 9х12 (предел допуст осн.погрешн. +/-3%)",
+    "IdentNumber": "TOOL_Kl_mom_pred_rogk_Mmax2100Nm_9x12",
+    "Category": "wrenchMoment",
+    "Type": "openEnd",
+    "SocketSize": "9x12",
+    "MaxMoment": 2100,
+    "MinMoment": 0
+  },
+  {
+    "Name": "Ключ моментный предельный св. 30 Нм до 135 Нм (предел допуст. осн.погрешности +/- 4% )",
+    "IdentNumber": "TOOL_Kl_mom_pred_Mmax_sv30Nm_do_135NmGOST33530-2015",
+    "Category": "wrenchMoment",
+    "Type": "ratchet",
+    "MaxMoment": 135,
+    "MinMoment": 30
+  },
+  {
+    "Name": "Ключ трещоточный 1/2",
+    "IdentNumber": "TOOL_2-640220",
+    "Category": "wrench",
+    "Type": "ratchet",
+    "Length": "1/2"
+  },
+  {
+    "Name": "Ключ трещоточный 1/4",
+    "IdentNumber": "TOOL_2_632300_1_4",
+    "Category": "wrench",
+    "Type": "ratchet",
+    "Length": "1/4"
+  },
+  {
+    "Name": "Молоток слесарный 431гр. квадратный боёк, деревянная рукоятка",
+    "IdentNumber": "TOOL_2-616300",
+    "Category": "other"
+  },
+  {
+    "Name": "Насадка для динамометрического ключа рожковая 10 мм, с посадочным квадратом 9х12",
+    "IdentNumber": "TOOL_Nasadka_dinam_klyucha_rogkovaya_10mm_9x12",
+    "Category": "head",
+    "Type": "openEnd",
+    "WrenchSize": 10,
+    "SocketSize": "9x12"
+  },
+  {
+    "Name": "Насадка для динамометрического ключа рожковая 13 мм, с посадочным квадратом 9х12",
+    "IdentNumber": "TOOL_Nasadka_dinam_klyucha_rogkovaya_13mm_9x12",
+    "Category": "head",
+    "Type": "openEnd",
+    "WrenchSize": 13,
+    "SocketSize": "9x12"
+  },
+  {
+    "Name": "Насадка для динамометрического ключа рожковая 14 мм, с посадочным квадратом 14x18",
+    "IdentNumber": "TOOL_Nasadka_dinam_klyucha_rogkovaya_14mm_14x18",
+    "Category": "head",
+    "Type": "openEnd",
+    "WrenchSize": 14,
+    "SocketSize": "14x18"
+  },
+  {
+    "Name": "Насадка для динамометрического ключа рожковая 14 мм, с посадочным квадратом 9х12",
+    "IdentNumber": "TOOL_Nasadka_dinam_klyucha_rogkovaya_14mm_9x12",
+    "Category": "head",
+    "Type": "openEnd",
+    "WrenchSize": 14,
+    "SocketSize": "9x12"
+  },
+  {
+    "Name": "Насадка для динамометрического ключа рожковая 17 мм, с посадочным квадратом 9х12",
+    "IdentNumber": "TOOL_Nasadka_dinam_klyucha_rogkovaya_17mm_9x12",
+    "Category": "head",
+    "Type": "openEnd",
+    "WrenchSize": 17,
+    "SocketSize": "9x12"
+  },
+  {
+    "Name": "Насадка для динамометрического ключа рожковая 19 мм, с посадочным квадратом 14x18",
+    "IdentNumber": "TOOL_Nasadka_dinam_klyucha_rogkovaya_19mm_14x18",
+    "Category": "head",
+    "Type": "openEnd",
+    "WrenchSize": 19,
+    "SocketSize": "14x18"
+  },
+  {
+    "Name": "Насадка для динамометрического ключа рожковая 19 мм, с посадочным квадратом 9х12",
+    "IdentNumber": "TOOL_Nasadka_dinam_klyucha_rogkovaya_19mm_9x12",
+    "Category": "head",
+    "Type": "openEnd",
+    "WrenchSize": 19,
+    "SocketSize": "9x12"
+  },
+  {
+    "Name": "Насадка для динамометрического ключа рожковая 22 мм, с посадочным квадратом 14x18",
+    "IdentNumber": "TOOL_Nasadka_dinam_klyucha_rogkovaya_22mm_14x18",
+    "Category": "head",
+    "Type": "openEnd",
+    "WrenchSize": 22,
+    "SocketSize": "14x18"
+  },
+  {
+    "Name": "Насадка для динамометрического ключа рожковая 24 мм, с посадочным квадратом 14x18",
+    "IdentNumber": "TOOL_Nasadka_dinam_klyucha_rogkovaya_24mm_14x18",
+    "Category": "head",
+    "Type": "openEnd",
+    "WrenchSize": 24,
+    "SocketSize": "14x18"
+  },
+  {
+    "Name": "Насадка для динамометрического ключа рожковая 27 мм, с посадочным квадратом 14x18",
+    "IdentNumber": "TOOL_Nasadka_dinam_klyucha_rogkovaya_27mm_14x18",
+    "Category": "head",
+    "Type": "openEnd",
+    "WrenchSize": 27,
+    "SocketSize": "14x18"
+  },
+  {
+    "Name": "Насадка для динамометрического ключа рожковая 30 мм, с посадочным квадратом 14x18",
+    "IdentNumber": "TOOL_Nasadka_dinam_klyucha_rogkovaya_30mm_14x18",
+    "Category": "head",
+    "Type": "openEnd",
+    "WrenchSize": 30,
+    "SocketSize": "14x18"
+  },
+  {
+    "Name": "Насадка для динамометрического ключа рожковая 30 мм, с посадочным квадратом 9х12",
+    "IdentNumber": "TOOL_Nasadka_dinam_klyucha_rogkovaya_30mm_9x12",
+    "Category": "head",
+    "Type": "openEnd",
+    "WrenchSize": 30,
+    "SocketSize": "9x12"
+  },
+  {
+    "Name": "Насадка для динамометрического ключа рожковая 32 мм, с посадочным квадратом 14x18",
+    "IdentNumber": "TOOL_Nasadka_dinam_klyucha_rogkovaya_32mm_14x18",
+    "Category": "head",
+    "Type": "openEnd",
+    "WrenchSize": 32,
+    "SocketSize": "14x18"
+  },
+  {
+    "Name": "Насадка для динамометрического ключа рожковая 36 мм, с посадочным квадратом 14x18",
+    "IdentNumber": "TOOL_Nasadka_dinam_klyucha_rogkovaya_36mm_14x18",
+    "Category": "head",
+    "Type": "openEnd",
+    "WrenchSize": 36,
+    "SocketSize": "14x18"
+  },
+  {
+    "Name": "Насадка для динамометрического ключа рожковая 36 мм, с посадочным квадратом 9х12",
+    "IdentNumber": "TOOL_Nasadka_dinam_klyucha_rogkovaya_36mm_9x12",
+    "Category": "head",
+    "Type": "openEnd",
+    "WrenchSize": 36,
+    "SocketSize": "9x12"
+  },
+  {
+    "Name": "Насадка для динамометрического ключа рожковая 41 мм, с посадочным квадратом 14x18",
+    "IdentNumber": "TOOL_Nasadka_dinam_klyucha_rogkovaya_41mm_14x18",
+    "Category": "head",
+    "Type": "openEnd",
+    "WrenchSize": 41,
+    "SocketSize": "14x18"
+  },
+  {
+    "Name": "Насадка для динамометрического ключа рожковая 46 мм, с посадочным квадратом 14x18",
+    "IdentNumber": "TOOL_Nasadka_dinam_klyucha_rogkovaya_46mm_14x18",
+    "Category": "head",
+    "Type": "openEnd",
+    "WrenchSize": 46,
+    "SocketSize": "14x18"
+  },
+  {
+    "Name": "Насадка для динамометрического ключа рожковая 50 мм, с посадочным квадратом 14x18",
+    "IdentNumber": "TOOL_Nasadka_dinam_klyucha_rogkovaya_50mm_14x18",
+    "Category": "head",
+    "Type": "openEnd",
+    "WrenchSize": 50,
+    "SocketSize": "14x18"
+  },
+  {
+    "Name": "Насадка для динамометрического ключа рожковая 50 мм, с посадочным квадратом 9х12",
+    "IdentNumber": "TOOL_Nasadka_dinam_klyucha_rogkovaya_50mm_9x12",
+    "Category": "head",
+    "Type": "openEnd",
+    "WrenchSize": 50,
+    "SocketSize": "9x12"
+  },
+  {
+    "Name": "Насадка для динамометрического ключа рожковая 55 мм, с посадочным квадратом 14x18",
+    "IdentNumber": "TOOL_Nasadka_dinam_klyucha_rogkovaya_55mm_14x18",
+    "Category": "head",
+    "Type": "openEnd",
+    "WrenchSize": 55,
+    "SocketSize": "14x18"
+  },
+  {
+    "Name": "Насадка для динамометрического ключа рожковая 60 мм, с посадочным квадратом 14x18",
+    "IdentNumber": "TOOL_Nasadka_dinam_klyucha_rogkovaya_60mm_14x18",
+    "Category": "head",
+    "Type": "openEnd",
+    "WrenchSize": 60,
+    "SocketSize": "14x18"
+  },
+  {
+    "Name": "Отвертка крестообразная РН-1-2 L=25 (35) мм",
+    "IdentNumber": "TOOL_45104390101901",
+    "Category": "other"
+  },
+  {
+    "Name": "Отвертка моментная предельная св. 30Нм до 135Нм (предел допуст. осн.погрешности - +/- 4% )",
+    "IdentNumber": "TOOL_Otv_mom_pred_Mmax_sv_30Nm_do_135Nm_GOST33530-2015",
+    "Category": "screwdriverMoment",
+    "Type": "screwdriver",
+    "MaxMoment": 30,
+    "MinMoment": 135
+  },
+  {
+    "Name": "Плоскогубцы 1-160",
+    "IdentNumber": "TOOL_45104390107700_gostR53925-2010"
+  },
+  {
+    "Name": "Смазка универсальная, очищающая, противокоррозионная",
+    "IdentNumber": "Material_Smazka_universalnaya",
+    "Type": "other"
+  },
+  {
+    "Name": "Удлинитель 1/2 L-125",
+    "IdentNumber": "TOOL_2-8044125",
+    "Type": "other"
+  },
+  {
+    "Name": "Удлинитель 1/2 L-250",
+    "IdentNumber": "TOOL_2-8044250",
+    "Type": "other"
+  },
+  {
+    "Name": "Щетка металлическая",
+    "IdentNumber": "TOOL_TTL_6-7",
+    "Type": "other"
+  },
+  {
+    "Name": "ьюльюлю",
+    "IdentNumber": "ьлюьлюьлю",
+    "Type": "other"
+  },
+  {
+    "Name": "TEST",
+    "IdentNumber": "TEST",
+    "Type": "TEST"
+  }
+]
