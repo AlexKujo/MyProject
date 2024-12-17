@@ -40,7 +40,7 @@
                 Width="151"
                 Click="ProcedureReverserButton_Click" />
         <Label x:Name="VersionLabel"
-               Content="Version 0.0.0"
+               Content="Version 0.0.1"
                HorizontalAlignment="Left"
                Margin="265,90,0,0"
                VerticalAlignment="Top" />
