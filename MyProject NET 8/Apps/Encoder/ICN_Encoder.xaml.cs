@@ -44,7 +44,6 @@ namespace MyProject_NET_8.Apps.Encoder
             else
             {
                 MessageBox.Show("Неверный формат ввода");
-                InputEncode.Text = "";
             }
         }
 
@@ -54,6 +53,18 @@ namespace MyProject_NET_8.Apps.Encoder
         {
             Clipboard.SetText(OutputEncode.Text);
             NoticeHelper.ShowNotification(CopyNotification, "Текст скопирован в буфер обмена!");
+        }
+        
+        private void InputEncode_GotFocus(object sender, RoutedEventArgs e)
+        {
+            if (InputEncode.Text != null && InputEncode.Text == "Введите кодировку:")
+                InputEncode.Text = ""; // Очищаем текст при получении фокуса
+        }
+
+        private void InputEncode_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (string.IsNullOrEmpty(InputEncode.Text))
+                InputEncode.Text = "Введите кодировку:"; // Устанавливаем текст по умолчанию, если текст пустой
         }
     }
 }

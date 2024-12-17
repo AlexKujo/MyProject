@@ -106,7 +106,7 @@ namespace MyProject_NET_8.Apps.TextTemplates
         }
 
         private void ComboBoxInputThread_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
+    {
             ComboBoxToolType.SelectedItem = null;
             ComboBoxWrenchSize.SelectedItem = null;
 
@@ -114,11 +114,17 @@ namespace MyProject_NET_8.Apps.TextTemplates
             {
                 ComboBoxToolType.IsEnabled = true;
                 ComboBoxWrenchSize.IsEnabled = true;
+
+                MomentFilterCheckBox.IsEnabled = false;
+                WrenchSizeFilterCheckBox.IsEnabled = false;
             }
             else
             {
                 ComboBoxToolType.IsEnabled = false;
                 ComboBoxWrenchSize.IsEnabled = false;
+
+                MomentFilterCheckBox.IsEnabled = true;
+                WrenchSizeFilterCheckBox.IsEnabled = true;
             }
 
             if (MomentFilterCheckBox.IsChecked == true || WrenchSizeFilterCheckBox.IsChecked == true)

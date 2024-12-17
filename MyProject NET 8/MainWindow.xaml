@@ -5,7 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MyProject_NET_8"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow"
+        Height="450"
+        Width="800">
     <Grid>
         <Button x:Name="EncoderButton"
                 Content="Кодировка"
@@ -40,9 +42,16 @@
                 Width="151"
                 Click="ProcedureReverserButton_Click" />
         <Label x:Name="VersionLabel"
-               Content="Version 0.0.0"
+               Content="Version 0.0.1"
                HorizontalAlignment="Left"
                Margin="265,90,0,0"
                VerticalAlignment="Top" />
+        <Button Content="Папки"
+                HorizontalAlignment="Left"
+                Margin="597,195,0,0"
+                VerticalAlignment="Top"
+                Height="42"
+                Width="92"
+                Click="Button_Click" />
     </Grid>
 </Window>

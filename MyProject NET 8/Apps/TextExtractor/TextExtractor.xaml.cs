@@ -1,18 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using HtmlAgilityPack;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
-using System.Xml.Linq;
-using HtmlAgilityPack;
 
 namespace MyProject_NET_8.Apps.TextExtractor
 {
@@ -27,6 +18,22 @@ namespace MyProject_NET_8.Apps.TextExtractor
         {
             InitializeComponent();
             htmlDoc = new HtmlDocument();
+            ExtractedListBox.ItemsSource = new List<string> { "Перетащите HTML-файл сюда" };
+        }
+
+        private void ExtractedContentBox_Drop(object sender, DragEventArgs e)
+        {
+            ExtractedListBox.ItemsSource = null;
+
+            if (ExtractedListBox.Items != null)
+                ExtractedListBox.Items.Clear();
+
+            if (e.Data.GetDataPresent(DataFormats.FileDrop))
+            {
+                string[] filesPaths = (string[])e.Data.GetData(DataFormats.FileDrop);
+
+                ExtractText(filesPaths[0]);
+            }
         }
 
         private void ExtractText(string filePath)
@@ -37,12 +44,15 @@ namespace MyProject_NET_8.Apps.TextExtractor
             var titleParaNodes = htmDoc.DocumentNode.SelectNodes("//div[(contains(@class, 'title') and not(parent::div[@class='figure'])) or contains(@class, 'para p')]");
             var reqSupportNodes = htmDoc.DocumentNode.SelectNodes("//div[@class='name' or @class='partNumber']");
 
-            ExtractedContentBox.Items.Add("ИНСТРУМЕНТЫ");
+            // Заголовок "ИНСТРУМЕНТЫ"
+            AddHeader("ИНСТРУМЕНТЫ");
             AddNodes(reqSupportNodes, "name");
 
+            // Пустая строка
             AddEmptyLine();
 
-            ExtractedContentBox.Items.Add("ШАГИ");
+            // Заголовок "ШАГИ"
+            AddHeader("ШАГИ");
             AddNodes(titleParaNodes, "title");
         }
 
@@ -52,10 +62,17 @@ namespace MyProject_NET_8.Apps.TextExtractor
             {
                 if (node.Attributes["class"].Value == firstNode)
                 {
-                    AddEmptyLine();
+                    if (node.Attributes["class"].Value == "title" || node.Attributes["class"].Value == "name")
+                    {
+                        var toolsTitleItem = new ListBoxItem
+                        {
+                            Content = node.InnerText.Trim(),
+                            FontWeight = FontWeights.SemiBold,
+                            Margin = new Thickness(0, 3, 5, 0)
+                        };
 
-                    if (node.Attributes["class"].Value == "title")
-                        ExtractedContentBox.Items.Add(node.InnerText.Trim().ToUpper());
+                        ExtractedListBox.Items.Add(toolsTitleItem);
+                    }
                     else
                         AddTextNode(node);
                 }
@@ -66,32 +83,33 @@ namespace MyProject_NET_8.Apps.TextExtractor
             }
         }
 
-        private void AddTextNode(HtmlNode node) => ExtractedContentBox.Items.Add(node.InnerText.Trim());
-
-        private void AddEmptyLine() => ExtractedContentBox.Items.Add(string.Empty);
-
-        private void ExtractedContentBox_Drop(object sender, DragEventArgs e)
+        private void AddHeader(string title)
         {
-            if (e.Data.GetDataPresent(DataFormats.FileDrop))
-            {
-                string[] filesPaths = (string[])e.Data.GetData(DataFormats.FileDrop);
-
-                ExtractText(filesPaths[0]);
-            }
+            var toolsTitleItem = new ListBoxItem { Content = title, FontWeight = FontWeights.DemiBold, FontSize = 14, Background = Brushes.WhiteSmoke };
+            ExtractedListBox.Items.Add(toolsTitleItem);
         }
+
+        private void AddTextNode(HtmlNode node) => ExtractedListBox.Items.Add(node.InnerText.Trim());
+
+        private void AddEmptyLine() => ExtractedListBox.Items.Add(string.Empty);
             
         private void ExtractedContentBox_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.C && Keyboard.Modifiers.HasFlag(ModifierKeys.Control))
             {
-                if (ExtractedContentBox.SelectedItem != null)
+                if (ExtractedListBox.SelectedItem != null)
                 {
-                    var selectedItemText = ExtractedContentBox.SelectedItem.ToString();
-                    Clipboard.SetText(selectedItemText);
-
-                    MessageBox.Show("Текст скопирован в буфер обмена.");
+                    CopyText();
                 }
             }
+        }
+
+        private void ContextMenu_Copy_Click(object sender, RoutedEventArgs e) => CopyText();
+
+        private void CopyText()
+        {
+            var selectedItemText = ExtractedListBox.SelectedItem.ToString();
+            Clipboard.SetText(selectedItemText);
         }
     }
 }

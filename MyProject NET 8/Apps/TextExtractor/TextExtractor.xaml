@@ -6,10 +6,13 @@
         xmlns:local="clr-namespace:MyProject_NET_8"
         mc:Ignorable="d"
         Title="ExtractHtmlTextWindow"
-        Height="450"
-        Width="800">
+        MinHeight="450"
+        MinWidth="450"
+        Width="800"
+        WindowStartupLocation="CenterScreen"
+        SizeToContent="Height">
     <Grid>
-        <ListBox x:Name="ExtractedContentBox"
+        <ListBox x:Name="ExtractedListBox"
                  AllowDrop="True"
                  Margin="10"
                  HorizontalAlignment="Stretch"
@@ -25,7 +28,17 @@
                                TextWrapping="Wrap"
                                VerticalAlignment="Top"
                                HorizontalAlignment="Stretch"
-                               MaxWidth="{Binding ActualWidth, RelativeSource={RelativeSource AncestorType=ListBox}}" />
+                               Margin="5,0,0,5"
+                               MaxWidth="{Binding ActualWidth, RelativeSource={RelativeSource AncestorType=ListBox}}">
+                    <!-- Контекстное меню -->
+                        <TextBlock.ContextMenu>
+                            <ContextMenu>
+                                <MenuItem Header="Копировать"
+                                          Click="ContextMenu_Copy_Click"
+                                          CommandParameter="{Binding}" />
+                            </ContextMenu>
+                        </TextBlock.ContextMenu>
+                    </TextBlock>
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>

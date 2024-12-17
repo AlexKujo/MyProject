@@ -10,8 +10,8 @@
         MinWidth="300"
         MinHeight="400"
         d:DesignHeight="564.96"
-        Width="1500"
-        Height="1000">
+        Width="1200"
+        Height="800">
     <Grid ShowGridLines="False">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="2*" />
@@ -58,7 +58,7 @@
                             <ItemsControl.ItemTemplate>
                                 <DataTemplate>
                                     <TextBlock Text="{Binding}"
-                                               TextWrapping="NoWrap"
+                                               TextWrapping="Wrap"
                                                VerticalAlignment="Center"
                                                HorizontalAlignment="Left"
                                                Margin="0,5,0,5"
