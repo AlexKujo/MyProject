@@ -159,7 +159,8 @@
                   FontFamily="Arial"
                   FontSize="14"
                   VerticalAlignment="Top"
-                  HorizontalAlignment="Center" />
+                  HorizontalAlignment="Center" 
+                  IsEnabled="False"/>
         <Label x:Name="Label"
                Grid.Column="1"
                Content=""

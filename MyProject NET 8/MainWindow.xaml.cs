@@ -3,6 +3,7 @@ using MyProject_NET_8.Apps.FolderOrganizer;
 using MyProject_NET_8.Apps.ProcedureReverse;
 using MyProject_NET_8.Apps.TextExtractor;
 using MyProject_NET_8.Apps.TextTemplates;
+using MyProject_NET_8;
 using System.Windows;
 
 namespace MyProject_NET_8
@@ -15,6 +16,11 @@ namespace MyProject_NET_8
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void ShowVersion()
+        {
+            VersionLabel.Content = VersionInfo.GetVersion();
         }
 
         private void EncoderButton_Click(object sender, RoutedEventArgs e)

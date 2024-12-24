@@ -1,25 +1,20 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
 
-namespace MyProject_NET_8
+namespace MyProject_NET_8;
+
+internal static class VersionInfo
 {
-    internal static class VersionInfo
+    public static string GetVersion()
     {
-        public static string GetVersion()
+        var assembly = Assembly.GetEntryAssembly();
+
+        if (assembly != null)
         {
-            string version = Assembly.GetExecutingAssembly().GetCustomAttribute<AssemblyInformationalVersionAttribute>().InformationalVersion;
-
-            if (version != string.Empty)
-            {
-                return version;
-            }
-
-            return version;
+            var version = assembly.GetName().Version;
+            return version != null ? version.ToString() : "Версия не найдена.";
         }
+
+        return "Сборка не определена.";
     }
 }

@@ -1,18 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
+﻿using System.Windows;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Animation;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
-using MyProject_NET_8;
 
 namespace MyProject_NET_8.Apps.Encoder
 {
@@ -21,6 +8,8 @@ namespace MyProject_NET_8.Apps.Encoder
     /// </summary>
     public partial class ICN_Encoder : Window
     {
+        private string placeholder = "Введите кодировку:";
+
         public ICN_Encoder()
         {
             InitializeComponent();
@@ -57,14 +46,14 @@ namespace MyProject_NET_8.Apps.Encoder
         
         private void InputEncode_GotFocus(object sender, RoutedEventArgs e)
         {
-            if (InputEncode.Text != null && InputEncode.Text == "Введите кодировку:")
+            if (InputEncode.Text != null && InputEncode.Text == placeholder)
                 InputEncode.Text = ""; // Очищаем текст при получении фокуса
         }
 
         private void InputEncode_LostFocus(object sender, RoutedEventArgs e)
         {
             if (string.IsNullOrEmpty(InputEncode.Text))
-                InputEncode.Text = "Введите кодировку:"; // Устанавливаем текст по умолчанию, если текст пустой
+                InputEncode.Text = placeholder; // Устанавливаем текст по умолчанию, если текст пустой
         }
     }
 }
