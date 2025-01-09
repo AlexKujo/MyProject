@@ -1,0 +1,24 @@
+﻿<Application x:Class="RapidHelper.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <!-- Базовый стиль для всех контролов -->
+        <Style TargetType="Control"
+               x:Key="BaseControlStyle">
+            <Setter Property="FontFamily"
+                    Value="Verdana" />
+        </Style>
+        <!-- Специфический стиль для кнопок -->
+        <Style TargetType="Button"
+               BasedOn="{StaticResource BaseControlStyle}">
+            <Setter Property="Background"
+                    Value="WhiteSmoke" />
+        </Style>
+        <!-- Стиль для окон -->
+        <Style TargetType="Window">
+            <Setter Property="Background"
+                    Value="#FFF0F0F0" />
+        </Style>
+    </Application.Resources>
+</Application>
