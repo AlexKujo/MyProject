@@ -41,7 +41,7 @@
                 VerticalAlignment="Top"
                 Margin="0,195,0,0"
                 Height="35"
-                Width="Auto"
+                Width="103"
                 Click="TextPresetsButton_Click" />
         <Button x:Name="ProcedureReverserButton"
                 Content="Инвертировать шаги"
