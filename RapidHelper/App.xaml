@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
+        
         <!-- Базовый стиль для всех контролов -->
         <Style TargetType="Control"
                x:Key="BaseControlStyle">
@@ -19,6 +20,8 @@
         <Style TargetType="Window">
             <Setter Property="Background"
                     Value="#FFF0F0F0" />
+            <Setter Property="Icon"
+                    Value="pack://application:,,,/EmbeddedResources/icon.ico"/>
         </Style>
     </Application.Resources>
 </Application>

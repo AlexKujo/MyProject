@@ -5,12 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RapidHelper"
         mc:Ignorable="d"
-        Title="FolderOrganizer"
+        Title="Создать папки"
         Height="393"
         Width="656"
-        FontFamily="Calibri"
-        FontSize="13"
-        ResizeMode="NoResize">
+        FontFamily="Verdana"
+        FontSize="12"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto" />
@@ -25,10 +26,11 @@
                 Margin="24,144,0,0"
                 VerticalAlignment="Top"
                 Height="38"
-                Width="90"
+                Width="auto"
                 Click="CreateFoldersButton_Click"
                 Grid.Column="1"
-                Background="WhiteSmoke" />
+                Background="WhiteSmoke" 
+                Padding="3"/>
         <TextBox x:Name="PathTextBox"
                  Margin="15,29,0,0"
                  TextWrapping="NoWrap"
@@ -58,8 +60,10 @@
         <Label x:Name="Label"
                Content="Выберите директорию:"
                HorizontalAlignment="Left"
-               Margin="15,3,0,0"
-               VerticalAlignment="Top" />
+               Margin="10,4,0,0"
+               VerticalAlignment="Top"
+               HorizontalContentAlignment="Left"
+               Width="auto"/>
         <Button x:Name="ArchiveButton"
                 Grid.Column="1"
                 Content="Создать .vmb"
@@ -67,12 +71,15 @@
                 Margin="24,267,0,0"
                 VerticalAlignment="Top"
                 Height="38"
-                Width="90"
+                Width="auto"
                 Click="ArchiveButton_Click"
-                Background="WhiteSmoke" />
+                Background="WhiteSmoke" 
+                Padding="3"/>
         <Label Content="Содержимое буфера обмена:"
                HorizontalAlignment="Left"
-               Margin="15,51,0,0"
-               VerticalAlignment="Top" />
+               Margin="10,51,0,0"
+               VerticalAlignment="Top" 
+               HorizontalContentAlignment="Left"
+               Width="auto"/>
     </Grid>
 </Window>

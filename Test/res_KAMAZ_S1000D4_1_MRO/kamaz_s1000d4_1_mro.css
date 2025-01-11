@@ -1,0 +1,1727 @@
+/*! KAMAZ_S1000D4_1_MRO bundle, Copyright (c) 2011-2021 Paragraphics */
+html,
+body {
+	padding: 0;
+	margin: 0;
+	width: 100%;
+	height: 100%;
+	font-size: 10pt;
+	font-family: Verdana, Geneva, Arial, sans-serif;
+}
+body {
+	overflow: hidden;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	background-color: #FFFFFF;
+}
+.app-content .app-panel {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+}
+.app-content #app-document #no-document {
+	position: absolute;
+	width: 100%;
+	height: 2em;
+	text-align: center;
+	top: 50%;
+	margin-top: -1em;
+}
+.app-content #app-figure {
+	overflow-y: hidden;
+}
+.app-content #app-figure .app-frame {
+	visibility: hidden;
+}
+.app-content #app-figure .app-frame object {
+	margin-left: -10000px;
+	width: 1px;
+}
+.app-filter .document {
+	top: 11mm;
+	padding-top: 0 !important;
+	padding-bottom: 0 !important;
+}
+.document {
+	overflow-x: auto;
+	overflow-y: scroll;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+.layout-Left #app-figure {
+	height: 100% !important;
+}
+.layout-Left #app-document {
+	height: 100% !important;
+	right: 0;
+	left: auto;
+}
+.layout-Right #app-figure {
+	height: 100% !important;
+	right: 0;
+	left: auto;
+}
+.layout-Right #app-document {
+	height: 100% !important;
+}
+.layout-Top #app-figure {
+	width: 100% !important;
+}
+.layout-Top #app-document {
+	width: 100% !important;
+	bottom: 0;
+	top: auto;
+}
+.layout-Bottom #app-figure {
+	width: 100% !important;
+	bottom: 0;
+	top: auto;
+}
+.layout-Bottom #app-document {
+	width: 100% !important;
+}
+.app-switch-3d #app-figure #figure3d {
+	visibility: visible;
+}
+.app-switch-3d #app-figure #figure3d object {
+	margin-left: 0;
+}
+.app-switch-2d #app-figure #figure2d {
+	visibility: visible;
+}
+.app-switch-2d #app-figure #figure2d object {
+	margin-left: 0;
+}
+.app-switch-1d #app-figure #figure1d {
+	visibility: visible;
+}
+.app-switch-1d #app-figure #figure1d object {
+	margin-left: 0;
+}
+.app-content.maximized #app-document {
+	width: 100% !important;
+	height: 100% !important;
+	visibility: visible !important;
+}
+.app-content.maximized #app-figure {
+	visibility: hidden;
+}
+.app-content.maximized #figure1d {
+	display: none;
+}
+.app-content.bounce #app-document {
+	visibility: hidden;
+	width: 99% !important;
+	height: 99% !important;
+}
+@media all and (orientation: landscape) {
+	.layout-Auto #app-figure {
+		height: 100% !important;
+		right: 0;
+		left: auto;
+	}
+	.layout-Auto #app-document {
+		height: 100% !important;
+	}
+}
+@media all and (orientation: portrait) {
+	.layout-Auto #app-figure {
+		width: 100% !important;
+		bottom: 0;
+		top: auto;
+	}
+	.layout-Auto #app-document {
+		width: 100% !important;
+	}
+}
+.app-panel .cortona3d-container {
+	width: 100%;
+	height: 100%;
+	position: relative;
+}
+.app-panel .error-message,
+.app-panel .loading-indicator {
+	display: none;
+}
+.app-panel .wait .loading-indicator {
+	display: block;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-left: -22mm;
+	margin-top: -22mm;
+}
+.app-panel .error>* {
+	display: none;
+}
+.app-panel .error .error-message {
+	position: absolute;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	display: table;
+	table-layout: fixed;
+	background-color: rgba(255, 0, 0, 0.4);
+	color: #ffffff;
+	font-size: 1.2em;
+}
+.app-panel .error .error-message .error-message-body {
+	display: table-cell;
+	vertical-align: middle;
+}
+.app-panel .error .error-message .error-message-body div {
+	padding: 1.2em;
+	text-align: center;
+	word-wrap: break-word;
+	white-space: normal;
+}
+.app-panel .app-scene {
+	z-index: 100;
+}
+.app-panel .app-bar {
+	position: absolute;
+	height: 9mm;
+	left: 0;
+	right: 0;
+	overflow: hidden;
+	white-space: nowrap;
+	font-family: verdana;
+	font-size: 4mm;
+	z-index: 0;
+}
+.app-panel .app-bar .left {
+	height: 100%;
+	float: left;
+	white-space: nowrap;
+	padding: 0 2mm;
+}
+.app-panel .app-bar .right {
+	height: 100%;
+	text-align: right;
+	white-space: nowrap;
+	padding: 0 2mm;
+}
+.app-panel .app-frame {
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	top: 9mm;
+	width: auto;
+	height: auto;
+	overflow: hidden;
+}
+.app-panel .app-frame svg a:hover {
+	cursor: pointer;
+}
+.app-panel #scene3d {
+	position: absolute;
+	top: 0;
+	height: auto;
+}
+.app-panel #title-bar {
+	padding: 1mm 0;
+}
+.app-panel #title-bar button {
+	margin-left: 1mm;
+}
+.app-panel #title-bar .right {
+	position: absolute;
+	height: auto;
+	width: auto;
+	right: 0;
+}
+.app-panel #app-figure-title {
+	display: table-cell;
+	height: 9mm;
+	vertical-align: middle;
+	font-size: 1.07em;
+	box-sizing: border-box;
+}
+.app-panel #seek-bar {
+	bottom: 9mm;
+	vertical-align: middle;
+	display: table-cell;
+	padding: 0 2mm;
+}
+.app-panel #navigation-bar {
+	bottom: 0;
+}
+.app-panel #navigation-bar .left button {
+	margin-right: 1mm;
+	min-width: 20mm;
+}
+.app-panel #navigation-bar #btn_group_prevnext button {
+	min-width: 10mm;
+}
+.app-panel button,
+.app-panel input[type='button'] {
+	height: 7mm;
+	font-size: 4mm;
+}
+.app-panel input[type='checkbox'] {
+	margin-left: 0;
+}
+.app-panel label {
+	margin-right: 1mm;
+}
+.app-panel #navigation-bar .right>* {
+	margin-left: 1mm;
+}
+.app-panel input#seek {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+.app-panel input#seek::-ms-tooltip {
+	display: none;
+}
+.app-panel .vcr-state-stop [data-link='stop'] {
+	font-weight: bold;
+}
+.app-panel .vcr-state-play [data-link='play'] {
+	font-weight: bold;
+}
+.app-panel .vcr-state-pause [data-link='pause'] {
+	font-weight: bold;
+}
+#pre-rendered-document {
+	display: none;
+}
+.link {
+	cursor: pointer;
+}
+.play-context {
+	border-left: .5em solid #add8e6;
+}
+a[href],
+a.link {
+	color: #000080;
+	text-decoration: none;
+}
+a[href]:visited,
+a.link:visited {
+	color: #000080;
+}
+a[href]:hover,
+a.link:hover {
+	color: #0000FF;
+	text-decoration: underline;
+}
+span.link3d {
+	display: inline-block;
+	background-color: #DD0000;
+	color: #FFFFFF;
+	font-weight: bold;
+	font-family: Verdana, sans-serif;
+	font-size: .7em;
+	padding: .15em;
+	margin-right: 1em;
+}
+span.link3d:before {
+	content: "3D";
+}
+span.link3d:hover {
+	background-color: #FF0000;
+	text-decoration: underline;
+}
+.filterHide {
+	display: none !important;
+}
+.app-bar-filter {
+	padding: 1mm 1em;
+	height: 9mm;
+	line-height: 9mm;
+	font-size: 4mm;
+}
+.app-bar-filter span.active {
+	font-weight: bold;
+}
+.app-bar-filter input {
+	margin-left: 1mm;
+}
+.filter {
+	position: fixed;
+	top: 11mm;
+	left: 10px;
+	display: table;
+	background-color: white;
+	visibility: hidden;
+	border: 1px solid black;
+	border-collapse: collapse;
+	z-index: 100;
+	white-space: normal;
+}
+.filter__row {
+	display: table-row;
+}
+.filter__attribute,
+.filter__value,
+.filter__action {
+	display: table-cell;
+	padding: 5px;
+	border-bottom: 1px solid black;
+}
+.filter__attribute {
+	width: 50px;
+}
+.filter__value {
+	width: 200px;
+}
+.filter__action {
+	text-align: center;
+}
+.filter__action select {
+	width: 100%;
+	font-size: 1em;
+	border: none;
+}
+
+.dmodule {
+	padding: 8pt;
+}
+.content {
+	counter-reset: table;
+	counter-reset: figure;
+}
+.content>* {
+	margin-top: 12pt;
+}
+.dmodule:after {
+	display: block;
+	text-align: center;
+	margin-top: 16pt;
+	font-weight: bold;
+	min-height: 1em;
+}
+.taskDuration:before,
+.title {
+	display: block;
+	font-weight: bold;
+	margin-top: 8pt;
+	min-height: 1em;
+}
+.identAndStatusSection {
+	background-color: #E0FFFF;
+	padding: 6pt;
+	margin-top: 12pt;
+	border: solid silver 1px;
+	cursor: pointer;
+}
+.identAndStatusSection>.dmAddress {
+	display: block;
+	text-align: right;
+	min-height: 1em;
+}
+.identAndStatusSection>.dmAddress * {
+	display: block;
+	font-weight: normal;
+	min-height: 1em;
+}
+.identAndStatusSection>.dmAddress .dmCode {
+	font-weight: bold;
+	margin-top: 12pt;
+	margin-bottom: 6pt;
+}
+.identAndStatusSection>.dmAddress *:before {
+	color: #808080;
+	font-weight: bold;
+	margin-right: 1em;
+}
+.externalPubTitle {
+	font-weight: bold;
+}
+.dmStatus {
+	display: none;
+}
+.dmStatus .security {
+	font-weight: bold;
+}
+.brexDmRef,
+.qualityAssurance,
+.systemBreakdownCode,
+.skillLevel,
+.reasonForUpdate,
+.dmStatus .techStandard,
+.dmStatus .applic,
+.dmStatus .applicCrossRefTableRef,
+.dmStatus .functionalItemRef,
+.dmStatus .remarks,
+.dmStatus .security,
+.dmStatus .responsiblePartnerCompany,
+.dmStatus .originator {
+	text-align: right;
+	display: block;
+	min-height: 1em;
+}
+.brexDmRef,
+.qualityAssurance,
+.systemBreakdownCode,
+.skillLevel,
+.reasonForUpdate,
+.dmStatus .techStandard,
+.dmStatus .applic,
+.dmStatus .applicCrossRefTableRef,
+.dmStatus .functionalItemRef,
+.dmStatus .remarks {
+	margin-top: 6pt;
+}
+.dataRestrictions {
+	font-family: monospace;
+	font-size: 9pt;
+}
+.restrictionInstructions {
+	margin-left: 20pt;
+}
+.dataHandling:before,
+.dataDestruction:before,
+.dataDisclosure:before,
+.dataDistribution:before,
+.copyright:before,
+.exportControl:before {
+	display: block;
+	margin-top: 6pt;
+	margin-bottom: 6pt;
+	min-height: 1em;
+}
+.dataRestrictions:before,
+.dataHandling,
+.dataDisclosure,
+.dataDestruction,
+.dataDistribution,
+.dataConds,
+.policyStatement,
+.supersedure,
+.copyright,
+.exportControl {
+	margin-top: 2pt;
+	margin-bottom: 6pt;
+	text-align: left;
+}
+.restrictionInfo {
+	margin-left: 20pt;
+	margin-top: 12pt;
+}
+.referencedApplicGroup {}
+.taskDefinition {}
+.dmAddress .dmTitle>* {
+	text-align: center;
+}
+.dmAddress .techName,
+.centerhead1 {
+	font-size: 14pt;
+	font-weight: bold;
+	text-align: center;
+	margin-top: 27pt;
+	margin-bottom: 17pt;
+}
+.mainProcedure {
+	margin: auto;
+	position: relative;
+	width: 10em;
+}
+.mainProcedure:before,
+.content>.description:before,
+.maintPlanning:before,
+.isolationMainProcedure:before,
+.descrCrew:before,
+.commonRepository:before,
+.faultReporting:before,
+.detectionInfo:before,
+.content>.refs:before,
+.preliminaryRqmts:before,
+.closeRqmts:before,
+.dmAddress .infoName,
+.centerhead2 {
+	display: block;
+	font-size: 14pt;
+	font-weight: bold;
+	font-style: italic;
+	text-align: center;
+	margin-top: 27pt;
+	margin-bottom: 17pt;
+	min-height: 1em;
+}
+.productionMaintData:before,
+.reqCondGroup:before,
+.reqSupportEquips:before,
+.reqSupplies:before,
+.reqTechInfoGroup:before,
+.reqSpares:before,
+.reqSafety:before,
+.reqPersons:before,
+.cautionRepository:before,
+.toolRepository:before,
+.controlIndicatorRepository:before,
+.functionalPhysicalAreaRepository:before,
+.warningRepository:before,
+.zoneRepository:before,
+.partRepository:before,
+.functionalItemRepository:before,
+.workAreaLocationGroup:before,
+.sidehead0 {
+	display: block;
+	font-size: 14pt;
+	font-weight: bold;
+	text-align: left;
+	margin-top: 27pt;
+	margin-bottom: 17pt;
+	min-height: 1em;
+}
+.level1>.title,
+.sidehead1 {
+	display: block;
+	font-size: 14pt;
+	font-weight: bold;
+	text-align: left;
+	margin-top: 27pt;
+	margin-bottom: 15pt;
+	min-height: 1em;
+}
+.level2>.title,
+.sidehead2 {
+	display: block;
+	font-size: 12pt;
+	font-weight: bold;
+	text-align: left;
+	min-height: 1em;
+}
+.level3>.title,
+.sidehead3 {
+	display: block;
+	font-size: 10pt;
+	font-weight: bold;
+	text-align: left;
+	min-height: 1em;
+}
+.level4>.title,
+.sidehead4 {
+	display: block;
+	font-size: 10pt;
+	text-align: left;
+	min-height: 1em;
+}
+.level5>.title,
+.sidehead5 {
+	display: block;
+	font-size: 10pt;
+	font-style: italic;
+	text-align: left;
+	min-height: 1em;
+}
+.levelledPara,
+.proceduralStep {
+	padding-left: 55pt;
+	position: relative;
+}
+.levelledPara>.levelledPara,
+.proceduralStep>.proceduralStep {
+	margin-left: -55pt;
+}
+.level1 {
+	counter-increment: counter1;
+	counter-reset: counter2 counter3 counter4 counter5 counter6 counter7 counter8;
+}
+.level2 {
+	counter-increment: counter2;
+	counter-reset: counter3 counter4 counter5 counter6 counter7 counter8;
+}
+.level3 {
+	counter-increment: counter3;
+	counter-reset: counter4 counter5 counter6 counter7 counter8;
+}
+.level4 {
+	counter-increment: counter4;
+	counter-reset: counter5 counter6 counter7 counter8;
+}
+.level5 {
+	counter-increment: counter5;
+	counter-reset: counter6 counter7 counter8;
+}
+.level6 {
+	counter-increment: counter6;
+	counter-reset: counter7 counter8;
+}
+.level7 {
+	counter-increment: counter7;
+	counter-reset: counter8;
+}
+.level8 {
+	counter-increment: counter8;
+}
+.level1>*:first-child:before,
+.level2>*:first-child:before,
+.level3>*:first-child:before,
+.level4>*:first-child:before,
+.level5>*:first-child:before,
+.level6>*:first-child:before,
+.level7>*:first-child:before,
+.level8>*:first-child:before {
+	position: absolute;
+	margin-left: -55pt;
+}
+.level1>*:first-child:before {
+	content: counter(counter1);
+}
+.level2>*:first-child:before {
+	content: counter(counter1) "."counter(counter2);
+}
+.level3>*:first-child:before {
+	content: counter(counter1) "."counter(counter2) "."counter(counter3);
+}
+.level4>*:first-child:before {
+	content: counter(counter1) "."counter(counter2) "."counter(counter3) "."counter(counter4);
+}
+.level5>*:first-child:before {
+	content: counter(counter1) "."counter(counter2) "."counter(counter3) "."counter(counter4) "."counter(counter5);
+}
+.level6>*:first-child:before {
+	content: counter(counter1) "."counter(counter2) "."counter(counter3) "."counter(counter4) "."counter(counter5) "."counter(counter6);
+}
+.level7>*:first-child:before {
+	content: counter(counter1) "."counter(counter2) "."counter(counter3) "."counter(counter4) "."counter(counter5) "."counter(counter6) "."counter(counter7);
+}
+.level8>*:first-child:before {
+	content: counter(counter1) "."counter(counter2) "."counter(counter3) "."counter(counter4) "."counter(counter5) "."counter(counter6) "."counter(counter7) "."counter(counter8);
+}
+.caption {
+	display: inline-block;
+	overflow: hidden;
+	padding: .3em;
+	min-height: 1em;
+	vertical-align: middle;
+}
+.caption-content {
+	display: table-cell;
+	vertical-align: middle;
+}
+.captionLine {
+	white-space: nowrap;
+	display: block;
+}
+.caption[data-color='co00'] {
+	background-color: white;
+}
+.caption[data-color='co01'] {
+	background-color: green;
+}
+.caption[data-color='co02'] {
+	background-color: #FFA500;
+}
+.caption[data-color='co03'] {
+	background-color: yellow;
+}
+.caption[data-color='co04'] {
+	background-color: red;
+}
+.caption[data-color='co07'] {
+	background-color: white;
+}
+.caption[data-color='co08'] {
+	background-color: gray;
+}
+.caption[data-color='co09'] {
+	background-color: clear;
+}
+.caption[data-color='co10'] {
+	background-color: black;
+}
+.caption[data-color='co51'] {
+	background-color: #3C6BFB;
+}
+.warning,
+.caution,
+.note {
+	display: block;
+	min-height: 1em;
+}
+.warning,
+.caution {
+	font-weight: bold;
+	text-align: center;
+}
+.warning>* {
+	text-align: left;
+}
+.warning:before,
+.caution:before {
+	display: block;
+	font-size: 12pt;
+	text-align: center;
+	margin-bottom: 8pt;
+	min-height: 1em;
+}
+.warning:before {
+	text-decoration: underline;
+}
+.note {
+	padding-left: 7mm;
+}
+.note:before {
+	text-align: left;
+	font-weight: bold;
+	display: block;
+	margin-left: -7mm;
+	min-height: 1em;
+}
+.multimedia>.title,
+.figure>.title {
+	display: none;
+}
+.multimedia,
+.figure {
+	display: block;
+	margin-top: 8pt;
+	font-style: italic;
+	counter-increment: figure;
+	counter-reset: sheet;
+	min-height: 1em;
+}
+.multimediaObject,
+.graphic {
+	display: block;
+	margin-top: 4pt;
+	counter-increment: sheet;
+	min-height: 1em;
+}
+.emphasis {
+	font-weight: bold;
+}
+.emphasis.em01 {
+	font-weight: bold;
+}
+.emphasis.em02 {
+	font-weight: normal;
+	font-style: italic;
+}
+.emphasis.em03 {
+	font-weight: normal;
+	text-decoration: underline;
+}
+.emphasis.em04 {
+	font-weight: normal;
+	text-decoration: overline;
+}
+.emphasis.em05 {
+	font-weight: normal;
+	text-decoration: line-through;
+}
+.subScript {
+	vertical-align: sub;
+	font-size: 80%;
+}
+.superScript {
+	vertical-align: super;
+	font-size: 80%;
+}
+.p {
+	display: block;
+	margin-bottom: 8pt;
+	margin-top: 8pt;
+	text-indent: 0;
+	text-align: left;
+	min-height: 1em;
+}
+ul {
+	display: block;
+	margin-bottom: 8pt;
+	margin-top: 8pt;
+	text-align: left;
+	padding-left: 9mm;
+	min-height: 1em;
+}
+ol {
+	display: block;
+	margin-bottom: 8pt;
+	margin-top: 8pt;
+	text-align: left;
+	padding-left: 9mm;
+	min-height: 1em;
+}
+li {
+	display: block;
+	margin-bottom: 0pt;
+	margin-top: 0pt;
+	text-align: left;
+	font-style: normal;
+	min-height: 1em;
+}
+li {
+	text-indent: -9mm;
+}
+li .note {
+	margin-left: 9mm;
+	text-indent: 0;
+	padding-left: 0;
+}
+ol>li {
+	margin-bottom: 8pt;
+}
+li>.p:first-child {
+	display: inline;
+}
+ol {
+	counter-reset: seq1;
+}
+ol ol {
+	counter-reset: seq2;
+}
+ol>li {
+	counter-increment: seq1;
+}
+ol ol>li {
+	counter-increment: seq2;
+}
+li:before {
+	display: inline-block;
+	text-indent: 0;
+	width: 7mm;
+}
+ol>li:before {
+	content: counter(seq1);
+}
+ol ol>li:before {
+	content: counter(seq1) "."counter(seq2);
+}
+ul.pf01>li:before {
+	content: "";
+}
+ul.pf03>li:before {
+	content: "\2010";
+}
+ul.pf04>li:before {
+	content: "\229A";
+}
+ul.pf05>li:before {
+	content: "\25CB";
+}
+ul.pf06>li:before {
+	content: "\25A1";
+}
+.warning ul>li:before,
+.caution ul>li:before,
+ul.pf07>li:before {
+	content: "\2022";
+	font-weight: normal;
+}
+ul>li:before,
+ul.pf02>li:before {
+	content: "\2010";
+}
+ol ul>li:before,
+ul ul>li:before,
+ol ul.pf02>li:before,
+ul ul.pf02>li:before {
+	content: "\2022";
+}
+ol ul ul>li:before,
+ul ul ul>li:before,
+ol ul ul.pf02>li:before,
+ul ul ul.pf02>li:before {
+	content: "\2010";
+}
+.definitionList {
+	display: block;
+	margin-top: 8pt;
+	min-height: 1em;
+}
+dt {
+	width: 50mm;
+	float: left;
+}
+dd {
+	min-width: 100mm;
+	margin-left: 50mm;
+}
+ol>.title,
+ul>.title {
+	text-align: left;
+	font-weight: bold;
+	margin-bottom: 4pt;
+	padding-left: 0;
+	margin-left: -9mm;
+	text-indent: 0;
+}
+.table-contents>.title,
+.definitionList>.title {
+	text-align: left;
+	font-weight: normal;
+	font-style: italic;
+	margin-bottom: 4pt;
+	padding-left: 0;
+	margin-left: 0;
+	text-indent: 0;
+}
+.termTitle,
+.definitionTitle {
+	display: block;
+	text-decoration: underline;
+	font-weight: bold;
+	text-align: left;
+	min-height: 1em;
+}
+.termTitle {
+	width: 50mm;
+	float: left;
+}
+.definitionTitle {
+	width: 100mm;
+	margin-left: 50mm;
+}
+.table {
+	display: block;
+	margin-top: 12pt;
+	counter-increment: table;
+	min-height: 1em;
+}
+.table table {
+	width: 100%;
+}
+.table tr {}
+.table td,
+.table th {
+	padding: 0pt 4pt;
+}
+th[align='left'],
+td[align='left'],
+th[align='left'] .p,
+td[align='left'] .p {
+	text-align: left;
+}
+th[align='center'],
+td[align='center'],
+th[align='center'] .p,
+td[align='center'] .p {
+	text-align: center;
+}
+th[align='right'],
+td[align='right'],
+th[align='right'] .p,
+td[align='right'] .p {
+	text-align: right;
+}
+th[align='justify'],
+td[align='justify'],
+th[align='justify'] .p,
+td[align='justify'] .p {
+	text-align: justify;
+}
+.productionMaintData,
+.reqCondGroup,
+.reqSupportEquips,
+.reqSupplies,
+.reqSpares,
+.reqPersons,
+.reqSafety {
+	display: block;
+	min-height: 1em;
+}
+.productionMaintData>*,
+.reqCondGroup>*,
+.reqSupportEquips>*,
+.reqSupplies>*,
+.reqSpares>*,
+.reqPersons>*,
+.reqSafety>* {
+	margin-left: 55pt;
+}
+.embeddedSupportEquipDescr>*:first-child,
+.embeddedSupplyDescr>*:first-child,
+.embeddedSpareDescr>*:first-child {
+	padding-left: 22pt;
+}
+.workAreaLocationGroup {
+	margin-top: 6pt;
+}
+.workAreaLocationGroup * {
+	display: inline-block;
+}
+.workAreaLocationGroup .zoneRef:before,
+.workAreaLocationGroup .accessPointRef:before {
+	font-weight: bold;
+	display: inline-block;
+	width: 110pt;
+}
+.workAreaLocationGroup .zoneRef+.zoneRef:before,
+.workAreaLocationGroup .accessPointRef+.accessPointRef:before {
+	display: block;
+	min-height: 1em;
+}
+.circuitBreakerRef:after {
+	content: attr(data-circuitBreakerNumber);
+}
+.toolRef:after {
+	content: attr(data-manufacturerCodeValue) "/"attr(data-toolNumber);
+}
+.partRef:after {
+	content: attr(data-manufacturerCodeValue) "/"attr(data-partNumberValue);
+}
+.functionalItemRef:after {
+	content: attr(data-functionalItemNumber) " "attr(data-manufacturerCodeValue);
+}
+.supplyRef:after {
+	content: attr(data-supplyNumber);
+}
+.supplyRqmtRef:after {
+	content: attr(data-supplyRqmtNumber);
+}
+.controlIndicatorRef {
+	content: attr(data-controlIndicatorNumber);
+}
+.personSkill .skillLevel {
+	text-align: left;
+}
+.tabular {
+	display: table;
+	margin-left: 0;
+	border-spacing: 0;
+	border-collapse: separate;
+	border-top: .5pt solid black;
+	border-bottom: .5pt solid black;
+	width: 100%;
+}
+.tabular>* {
+	display: table-row !important;
+}
+.tabular>*>* {
+	display: table-cell !important;
+	padding: 4pt;
+}
+.taskDuration {
+	display: block;
+	padding-left: 55pt;
+	min-height: 1em;
+}
+.taskDuration:before {
+	margin-left: -55pt;
+}
+.taskDuration:after {
+	white-space: pre;
+}
+.externalPubCode:before {
+	display: inline-block;
+	margin-right: .25em;
+}
+.table-contents>.title {
+	text-align: center;
+}
+.header>* {
+	font-weight: bold;
+	border-bottom: .5pt solid black;
+}
+.dmAddress .language:before,
+.dmAddress .language:before,
+.dmAddress .issueInfo:before,
+.dmAddress .issueDate:before,
+.dmStatus .responsiblePartnerCompany:before,
+.dmStatus .originator:before,
+.applicCrossRefTableRef:before,
+.dmStatus>.applic:before,
+.techStandard:before,
+.brexDmRef:before,
+.figure:before,
+.firstVerification:before,
+.secondVerification:before,
+.unverified:before,
+.systemBreakdownCode:before,
+.skillLevel:before,
+.reasonForUpdate:before,
+.supplyDescr:before,
+.spareDescr:before,
+.supportEquipDescr:before,
+.embeddedSupplyDescr:before,
+.embeddedSupportEquipDescr:before,
+.embeddedSpareDescr:before,
+.condCrossRefTableRef:before,
+.productCrossRefTableRef:before,
+.if>.caseCond:before,
+.elseIf>.caseCond:before,
+.challenge:after,
+.dataRestrictions:before,
+.dataDistribution:before,
+.exportControl:before,
+.dataHandling:before,
+.dataDestruction:before,
+.dataDisclosure:before,
+.copyright:before,
+.frontMatter .responsiblePartnerCompany:before,
+.frontMatter .enterpriseSpec:before,
+.timeLimitInfo *:before,
+.isolationStep:before,
+.parameter:before,
+.hotspot:before,
+.isolationProcedureEnd:before {
+	font-weight: bold;
+	color: #444444;
+}
+.enterpriseName,
+.identExtension,
+.dmCode,
+.language,
+.issueInfo,
+.issueDate,
+.security,
+.exportRegistrationStmt,
+.subScript,
+.superScript,
+.dmRef,
+.dmRefIdent,
+.dmRefAddressItems,
+.behavior,
+.functionalItemRef,
+.refs>.dmRef .dmRefIdent,
+.refs>.dmRef .dmRefIdent>*,
+.refs>.dmRef .dmRefAddressItems,
+.refs>.dmRef .dmRefAddressItems>*,
+.refs .techName,
+.refs .infoName,
+.pmRef,
+.pmRefIdent,
+.pmCode,
+.pmRefAddressItems,
+.pubMedia,
+.externalPubRef,
+.externalPubRefIdent,
+.externalPubCode,
+.externalPubTitle,
+.indexFlag,
+.acronym,
+.acronymTerm,
+.verbatimText,
+.externalPubIssue,
+.externalPubRefAddressItems,
+.circuitBreakerRef,
+.controlIndicatorRef,
+.inlineSignificantData,
+.quantity,
+.fullNatoStockNumber,
+.zoneRef,
+.accessPointRef,
+.partNumber,
+.serialNumber,
+.internalRef,
+.changeInline,
+.symbol,
+.footnoteRef,
+.spanspec,
+.enumeration,
+.catalogSeqNumberRef,
+.partRef,
+.installationLocation,
+.productItem,
+.noConds,
+.reqCond,
+.variableRef,
+.globalPropertyRef,
+.booleanOperator,
+.numberOperator,
+.setOperator,
+.stringOperator,
+.booleanFunction,
+.numberFunction,
+.setFunction,
+.stringFunction,
+.trueValue,
+.falseValue,
+.noValue,
+.reqCondDm,
+.reqCondDm>*,
+.personCategory,
+.personSkill,
+.trade,
+.estimatedTime,
+.toolRef,
+.materialSetRef,
+.noSupportEquips,
+.noSupplies,
+.supplyRef,
+.supplyRqmtRef,
+.noSpares,
+.noSafety,
+.threshold,
+.thresholdValue,
+.tolerance,
+.enterpriseRef,
+.buyerFurnishedEquipFlag,
+.sparePartClass,
+.partUsage,
+.unitOfIssueQualificationSegment,
+.quantityPerUnit,
+.hazardousClass,
+.enterpriseIdent,
+.enterpriseIdentAlt,
+.workArea,
+.limit,
+.limit>*,
+.sampling,
+.inspectionType,
+.trigger,
+.limitRange,
+.limitRangeFrom,
+.cautionIdent,
+.functionalPhysicalAreaIdent,
+.warningIdent,
+.zoneIdent,
+.partIdent,
+.functionalItemIdent,
+.applic *,
+.identNumber,
+.identNumber>* {
+	display: inline;
+}
+.supportEquipDescr>*>*,
+.supplyDescr>*>*,
+.spareDescr>*>*,
+.embeddedSupportEquipDescr>*>*,
+.embeddedSpareDescr>*>*,
+.blockchild>* {
+	display: block !important;
+}
+span.link3d {
+	position: absolute;
+	top: 0;
+	margin-left: -15pt;
+}
+.Procedure {
+	padding-left: .3em;
+}
+.estimatedTime[data-unitOfMeasure]:after {
+	content: " "attr(data-unitOfMeasure);
+}
+.alert-message-type-1 {
+	background-image: url(data:image/gif;base64,R0lGODlhJwAnAEAAACH5BAAAAAAALAAAAAAnACcAhwAAAAAAMwAAZgAAmQAAzAAA/wArAAArMwArZgArmQArzAAr/wBVAABVMwBVZgBVmQBVzABV/wCAAACAMwCAZgCAmQCAzACA/wCqAACqMwCqZgCqmQCqzACq/wDVAADVMwDVZgDVmQDVzADV/wD/AAD/MwD/ZgD/mQD/zAD//zMAADMAMzMAZjMAmTMAzDMA/zMrADMrMzMrZjMrmTMrzDMr/zNVADNVMzNVZjNVmTNVzDNV/zOAADOAMzOAZjOAmTOAzDOA/zOqADOqMzOqZjOqmTOqzDOq/zPVADPVMzPVZjPVmTPVzDPV/zP/ADP/MzP/ZjP/mTP/zDP//2YAAGYAM2YAZmYAmWYAzGYA/2YrAGYrM2YrZmYrmWYrzGYr/2ZVAGZVM2ZVZmZVmWZVzGZV/2aAAGaAM2aAZmaAmWaAzGaA/2aqAGaqM2aqZmaqmWaqzGaq/2bVAGbVM2bVZmbVmWbVzGbV/2b/AGb/M2b/Zmb/mWb/zGb//5kAAJkAM5kAZpkAmZkAzJkA/5krAJkrM5krZpkrmZkrzJkr/5lVAJlVM5lVZplVmZlVzJlV/5mAAJmAM5mAZpmAmZmAzJmA/5mqAJmqM5mqZpmqmZmqzJmq/5nVAJnVM5nVZpnVmZnVzJnV/5n/AJn/M5n/Zpn/mZn/zJn//8wAAMwAM8wAZswAmcwAzMwA/8wrAMwrM8wrZswrmcwrzMwr/8xVAMxVM8xVZsxVmcxVzMxV/8yAAMyAM8yAZsyAmcyAzMyA/8yqAMyqM8yqZsyqmcyqzMyq/8zVAMzVM8zVZszVmczVzMzV/8z/AMz/M8z/Zsz/mcz/zMz///8AAP8AM/8AZv8Amf8AzP8A//8rAP8rM/8rZv8rmf8rzP8r//9VAP9VM/9VZv9Vmf9VzP9V//+AAP+AM/+AZv+Amf+AzP+A//+qAP+qM/+qZv+qmf+qzP+q///VAP/VM//VZv/Vmf/VzP/V////AP//M///Zv//mf//zP///wAAAAAAAAAAAAAAAAj/AKUJHCjt1r6DCBMqXLiP3i2CEAkaZEhx4bJsESOi8lWxI8Jl4FBlJDgtnEePxMCNJPjKVrSTFevZWklQHMyKxGbSFOjyJkOQOwVO9KmQ3qug0l4RXUjsYdBUJpd+/IY01bmXFfUd1KpQ2TaRO6f1gom1a8igqIZKJaYNKSp0UpcdTAmWptWyS5XZmhbUVTi5Uve501aXJsfA+3JWvUUPcdOqYxHTg4VUmi3EiY8+PRz4cdBplxEra4s0dGfKaDlLHaZzJ1S8RN053YkqcufWdqPeRuoXts+UVa8ilpkKrdq8mne+gisaHN+gPRHjXpnKdmBllY8vZftUO1FlKsNaGpc6Gan339NH3vLtc/TT8dvDBX11/iZdiAEBADs=);
+	background-position: left top;
+	background-repeat: repeat;
+}
+.alert-message-type-2 {
+	background-image: url(data:image/gif;base64,R0lGODlhJwAnADAAACH5BAAAAAAALAAAAAAnACcAhwAAAAAAMwAAZgAAmQAAzAAA/wArAAArMwArZgArmQArzAAr/wBVAABVMwBVZgBVmQBVzABV/wCAAACAMwCAZgCAmQCAzACA/wCqAACqMwCqZgCqmQCqzACq/wDVAADVMwDVZgDVmQDVzADV/wD/AAD/MwD/ZgD/mQD/zAD//zMAADMAMzMAZjMAmTMAzDMA/zMrADMrMzMrZjMrmTMrzDMr/zNVADNVMzNVZjNVmTNVzDNV/zOAADOAMzOAZjOAmTOAzDOA/zOqADOqMzOqZjOqmTOqzDOq/zPVADPVMzPVZjPVmTPVzDPV/zP/ADP/MzP/ZjP/mTP/zDP//2YAAGYAM2YAZmYAmWYAzGYA/2YrAGYrM2YrZmYrmWYrzGYr/2ZVAGZVM2ZVZmZVmWZVzGZV/2aAAGaAM2aAZmaAmWaAzGaA/2aqAGaqM2aqZmaqmWaqzGaq/2bVAGbVM2bVZmbVmWbVzGbV/2b/AGb/M2b/Zmb/mWb/zGb//5kAAJkAM5kAZpkAmZkAzJkA/5krAJkrM5krZpkrmZkrzJkr/5lVAJlVM5lVZplVmZlVzJlV/5mAAJmAM5mAZpmAmZmAzJmA/5mqAJmqM5mqZpmqmZmqzJmq/5nVAJnVM5nVZpnVmZnVzJnV/5n/AJn/M5n/Zpn/mZn/zJn//8wAAMwAM8wAZswAmcwAzMwA/8wrAMwrM8wrZswrmcwrzMwr/8xVAMxVM8xVZsxVmcxVzMxV/8yAAMyAM8yAZsyAmcyAzMyA/8yqAMyqM8yqZsyqmcyqzMyq/8zVAMzVM8zVZszVmczVzMzV/8z/AMz/M8z/Zsz/mcz/zMz///8AAP8AM/8AZv8Amf8AzP8A//8rAP8rM/8rZv8rmf8rzP8r//9VAP9VM/9VZv9Vmf9VzP9V//+AAP+AM/+AZv+Amf+AzP+A//+qAP+qM/+qZv+qmf+qzP+q///VAP/VM//VZv/Vmf/VzP/V////AP//M///Zv//mf//zP///wAAAAAAAAAAAAAAAAj/AAEIHGgDkjF7CBMqXKgwniUwAyNKBADDEjyGGDFygjhxog2LGUMiZAaMY8eIMCBdFJnRWMmTEm3oYsaypTGTMClaOliTobGbOQmq7OkTaFCBQ4kq/Ikzpw2eShMaPZoyqtSXRwEUXBn12NSgFbkqZZpVa9KoZLPC0AU1KtajH9sSPfawbEqxSt8G/Yi3Z1qqwOT61evUoFV7f8GeHUsYJt/DiXOuFVzTZVPHkGgeBmbG7mKikTH3rdms8UmZmtGa7piSMsvQpyEdRrjaI0irzeqqZTu7dsyds49dPhl2NuKyW2db3u369VfHwCE/J/4Z9PSOBY0vp8pb+nCPmY37Bh5Y3HvHgAA7);
+	background-position: left top;
+	background-repeat: repeat;
+}
+.learning {
+	display: block;
+}
+.learningPlan,
+.learningOverview,
+.learningContent,
+.learningSummary,
+.learningAssessment,
+.lcProject,
+.lcPerformanceAnalysis,
+.lcCauseAnalysis,
+.lcInterventionDefinition,
+.lcOrganizationalAnalysis,
+.lcGapAnalysis,
+.lcClient,
+.lcLearningPlan,
+.lcCourseIdentNumber,
+.lcModificationDate,
+.lcDeliveryDate,
+.lcPlanSubject,
+.lcVisionStatement,
+.lcMissionStatement,
+.lcValues,
+.lcGoalStatement,
+.lcObjectiveStatement,
+.lcGapItem,
+.lcDesiredPerformanceStatement,
+.lcActualPerformanceStatement,
+.lcPlanObjective,
+.lcJtaItem,
+.lcGapStatement,
+.lcOrganizationalEnvironmentAnalysis,
+.lcWorkEnvironmentAnalysis,
+.lcPhysicalAspectsOfSite,
+.lcSocialAspectsOfSite,
+.lcPerformerAnalysis,
+.lcJobTitle,
+.lcJobCode,
+.lcEducationLevel,
+.lcAge,
+.lcProfessionalBackground,
+.lcKnowledge,
+.lcSkills,
+.lcAbilities,
+.lcAttitude,
+.lcEnvironmentalFactor,
+.lcData,
+.lcResources,
+.lcIncentives,
+.lcInternalFactor,
+.lcCapacity,
+.lcMotives,
+.lcNonTrainingInterventions,
+.lcPerformanceSupport,
+.lcJobDesign,
+.lcPersonalDevelopment,
+.lcHumanResourceDevelopment,
+.lcOrganizationalCommunication,
+.lcOrganizationalDesign,
+.lcTrainingInterventions,
+.lcTargetAudience,
+.lcCurrentEntryBehaviors,
+.lcAttitudeTowardContent,
+.lcLearningPreferences,
+.lcPrerequisites,
+.lcRequiredEntryBehaviors,
+.lcTrainingComponent,
+.lcTrainingType,
+.lcLearningStrategy,
+.lcTime,
+.lcRequiredFinances,
+.lcRequiredPersonnel,
+.lcRequiredFacilities,
+.lcRequiredEquipment,
+.lcLocalCultureConsiderations,
+.lcAssessmentStrategy,
+.lcAssessmentComponent,
+.lcMasteryScoreCriteria,
+.lcPerformanceRubric,
+.lcScoringMethod,
+.lcMinimumPassThreshold,
+.lcTechnicalRqmts,
+.lcBrowsers,
+.lcLms,
+.lcNonLmsEnvironment,
+.lcPaperBasedMaterials,
+.lcClassroom,
+.lcOjt,
+.lcAccessibility,
+.lcPlayers,
+.lcGraphicStandards,
+.lcViewers,
+.lcResolution,
+.lcFileSizeLimitations,
+.lcDownloadTime,
+.lcSecurity,
+.lcLearningObjectives,
+.lcObjectiveItem,
+.lcInterventionImplementation,
+.lcPerformanceEvaluation,
+.lcFormativeEvaluation,
+.lcSummativeEvaluation,
+.lcImmediatePerformanceCompetence,
+.lcJobTransfer,
+.lcOrganizationalImpact,
+.lcSection,
+.lcIntro,
+.lcInteraction,
+.lcSummary,
+.lcQuestion,
+.lcAnswerOption,
+.lcSequenceOption,
+.lcFeedbackItem,
+.lcAsset,
+.lcSequence,
+.lcReview,
+.lcNextSteps {
+	display: block;
+}
+.lcClient:before,
+.lcLearningPlan:before,
+.lcCourseIdentNumber:before,
+.lcModificationDate:before,
+.lcDeliveryDate:before,
+.lcPlanSubject:before,
+.lcVisionStatement:before,
+.lcMissionStatement:before,
+.lcValues:before,
+.lcGoalStatement:before,
+.lcObjectiveStatement:before,
+.lcDesiredPerformanceStatement:before,
+.lcActualPerformanceStatement:before,
+.lcPlanObjective:before,
+.lcJtaItem:before,
+.lcGapStatement:before,
+.lcManagerialSupport:before,
+.lcPhysicalAspectsOfSite:before,
+.lcSocialAspectsOfSite:before,
+.lcSpecialFactors:before,
+.lcJobTitle:before,
+.lcJobCode:before,
+.lcEducationLevel:before,
+.lcAge:before,
+.lcProfessionalBackground:before,
+.lcKnowledge:before,
+.lcSkills:before,
+.lcAbilities:before,
+.lcAttitude:before,
+.lcData:before,
+.lcResources:before,
+.lcIncentives:before,
+.lcCapacity:before,
+.lcMotives:before,
+.lcPerformanceSupport:before,
+.lcJobDesign:before,
+.lcPersonalDevelopment:before,
+.lcHumanResourceDevelopment:before,
+.lcOrganizationalCommunication:before,
+.lcOrganizationalDesign:before,
+.lcCurrentEntryBehaviors:before,
+.lcAttitudeTowardContent:before,
+.lcLearningPreferences:before,
+.lcTrainingType:before,
+.lcLearningStrategy:before,
+.lcDuration:before,
+.lcTime:before,
+.lcRequiredFinances:before,
+.lcRequiredPersonnel:before,
+.lcRequiredFacilities:before,
+.lcRequiredEquipment:before,
+.lcLocalCultureConsiderations:before,
+.lcMasteryScoreCriteria:before,
+.lcPerformanceRubric:before,
+.lcScoringMethod:before,
+.lcMinimumPassThreshold:before,
+.lcBrowsers:before,
+.lcLms:before,
+.lcNonLmsEnvironment:before,
+.lcPaperBasedMaterials:before,
+.lcClassroom:before,
+.lcOjt:before,
+.lcAccessibility:before,
+.lcPlayers:before,
+.lcGraphicStandards:before,
+.lcViewers:before,
+.lcResolution:before,
+.lcFileSizeLimitations:before,
+.lcDownloadTime:before,
+.lcSecurity:before,
+.lcObjectiveItem:before,
+.lcImmediatePerformanceCompetence:before,
+.lcJobTransfer:before,
+.lcOrganizationalImpact:before,
+.lcQuestion:before,
+.lcAnswerOption:before,
+.lcSequenceOption:before,
+.lcFeedbackItem:before,
+.lcAsset:before {
+	display: block;
+	font-family: 'Courier New', Courier, monospace;
+	font-size: 0.9em;
+	margin-top: 6pt;
+	margin-bottom: 6pt;
+	color: #808080;
+}
+.lcCorrectResponse:before,
+.lcSequence:before {
+	font-family: 'Courier New', Courier, monospace;
+	font-size: 0.9em;
+	font-weight: bold;
+	color: black;
+}
+.learningPlan:before,
+.learningOverview:before,
+.learningContent:before,
+.learningSummary:before,
+.learningAssessment:before {
+	display: block;
+	font-style: italic;
+	text-align: center;
+	font-size: 1.6em;
+	font-weight: bold;
+	margin-top: 16pt;
+	margin-bottom: 11pt;
+}
+.lcProject:before,
+.lcPerformanceAnalysis:before,
+.lcCauseAnalysis:before,
+.lcInterventionDefinition:before,
+.lcInstruction:before,
+.lcInterventionImplementation:before,
+.lcPerformanceEvaluation:before {
+	display: block;
+	font-size: 1.4em;
+	text-align: left;
+	font-weight: bold;
+	margin-top: 12pt;
+	margin-bottom: 12pt;
+}
+.lcOrganizationalAnalysis:before,
+.lcGapAnalysis:before,
+.lcOrganizationalEnvironmentAnalysis:before,
+.lcWorkEnvironmentAnalysis:before,
+.lcPerformerAnalysis:before,
+.lcEnvironmentalFactor:before,
+.lcInternalFactor:before,
+.lcNonTrainingInterventions:before,
+.lcTrainingInterventions:before,
+.lcLearningObjectives:before,
+.lcFormativeEvaluation:before,
+.lcSummativeEvaluation:before,
+.lcAudience:before,
+.learningOverview>.lcDuration:before,
+.learningOverview>.lcResources:before,
+.learningSummary>.lcResources:before,
+.lcSection:before,
+.lcIntro:before,
+.learningAssessment>.lcDuration:before,
+.lcInteraction:before,
+.lcSummary:before,
+.lcReview:before,
+.lcNextSteps:before {
+	display: block;
+	font-family: Verdana, Arial, sans-serif;
+	font-size: 1.2em;
+	text-align: left;
+	font-weight: bold;
+	margin-top: 12pt;
+	margin-bottom: 6pt;
+	color: black;
+}
+.lcGapItem:before,
+.lcTargetAudience:before,
+.lcPrerequisites:before,
+.lcRequiredEntryBehaviors:before,
+.lcTrainingComponent:before,
+.lcAssessmentStrategy:before,
+.lcTechnicalRqmts:before,
+.lcEntryBehavior:before {
+	display: block;
+	text-align: left;
+	font-size: 1em;
+	font-weight: bold;
+	margin-top: 6pt;
+	margin-bottom: 1pt;
+}
+.lcAssessmentComponent {
+	display: block;
+	text-align: left;
+	font-size: 1em;
+	font-weight: normal;
+	margin-top: 6pt;
+	margin-bottom: 1pt;
+}
+.lcProject>*,
+.lcPerformanceAnalysis>*,
+.lcCauseAnalysis>*,
+.lcInterventionDefinition>*,
+.lcOrganizationalAnalysis>*,
+.lcGapAnalysis>*,
+.lcGapItem>*,
+.lcWorkEnvironmentAnalysis>*,
+.lcPerformerAnalysis>*,
+.lcEnvironmentalFactor>*,
+.lcInternalFactor>*,
+.lcNonTrainingInterventions>*,
+.lcTrainingInterventions>*,
+.lcTargetAudience>*,
+.lcTrainingComponent>*,
+.lcAssessmentComponent>*,
+.lcTechnicalRqmts>*,
+.lcLearningObjectives>*,
+.lcObjectiveItem>*,
+.lcPerformanceEvaluation>*,
+.lcSummativeEvaluation>*,
+.lcAudience>*,
+.lcDuration>*,
+.lcResources>*,
+.lcSection>*,
+.lcQuestion>*,
+.lcSummary>*,
+.lcReview>*,
+.lcNextSteps>*,
+.lcAnswerOption>*,
+.lcSequenceOption>*,
+.lcFeedbackItem>* {
+	display: block;
+	margin-left: 20pt;
+}
+.lcFeedbackItem[feedbackStatus="fbCorrect"]:before {
+	color: green;
+}
+.lcFeedbackItem[feedbackStatus="fbIncorrect"]:before {
+	color: red;
+}
+.lcMatchTable {
+	display: table;
+}
+.lcMatchingHeader,
+.lcMatchingPair {
+	display: table-row;
+}
+.lcMatchingHeader {
+	font-weight: bold;
+	background-color: #d3d3d3;
+}
+.lcMatchingPair>.lcItem,
+.lcMatchingPair>.lcMatchingItem,
+.lcMatchingHeader>.lcItem,
+.lcMatchingHeader>.lcMatchingItem {
+	display: table-cell;
+}
+.lcSequenceOption {
+	border: 1px solid black;
+}
+.select {
+	background-color: aquamarine;
+}
+.tabular.lcAnswerOptionGroup,
+.tabular.lcSequenceOptionGroup,
+.tabular.lcMatchTable {
+	table-layout: fixed;
+}
+.tabular.lcAnswerOptionGroup .control {
+	width: 50px;
+}
+.tabular.lcMatchTable>*>* {
+	width: 50%;
+}
+.slideControl {
+	text-align: right;
+}
+.correct {
+	background-color: #90EE90;
+}
+.wrong {
+	background-color: #FFCCCC;
+}
+.slide.hide {
+	display: none;
+}
+.slide.show {
+	display: block;
+}
+.acronym {
+	display: inline-block;
+}
+.acronymTerm {
+	cursor: pointer;
+	border-bottom: 1px dashed #000;
+}
+.acronymDefinition {
+	display: none;
+}
+.footnote {
+	cursor: pointer;
+	vertical-align: super;
+	font-size: 80%;
+}
+.footnoteBody {
+	display: none;
+}
+.header>.person,
+.man,
+.numRequired {
+	display: none !important;
+}
+.alert-message-type-1 {
+	background-image: url(data:image/gif;base64,R0lGODlhJwAnAEAAACH5BAAAAAAALAAAAAAnACcAhwAAAAAAMwAAZgAAmQAAzAAA/wArAAArMwArZgArmQArzAAr/wBVAABVMwBVZgBVmQBVzABV/wCAAACAMwCAZgCAmQCAzACA/wCqAACqMwCqZgCqmQCqzACq/wDVAADVMwDVZgDVmQDVzADV/wD/AAD/MwD/ZgD/mQD/zAD//zMAADMAMzMAZjMAmTMAzDMA/zMrADMrMzMrZjMrmTMrzDMr/zNVADNVMzNVZjNVmTNVzDNV/zOAADOAMzOAZjOAmTOAzDOA/zOqADOqMzOqZjOqmTOqzDOq/zPVADPVMzPVZjPVmTPVzDPV/zP/ADP/MzP/ZjP/mTP/zDP//2YAAGYAM2YAZmYAmWYAzGYA/2YrAGYrM2YrZmYrmWYrzGYr/2ZVAGZVM2ZVZmZVmWZVzGZV/2aAAGaAM2aAZmaAmWaAzGaA/2aqAGaqM2aqZmaqmWaqzGaq/2bVAGbVM2bVZmbVmWbVzGbV/2b/AGb/M2b/Zmb/mWb/zGb//5kAAJkAM5kAZpkAmZkAzJkA/5krAJkrM5krZpkrmZkrzJkr/5lVAJlVM5lVZplVmZlVzJlV/5mAAJmAM5mAZpmAmZmAzJmA/5mqAJmqM5mqZpmqmZmqzJmq/5nVAJnVM5nVZpnVmZnVzJnV/5n/AJn/M5n/Zpn/mZn/zJn//8wAAMwAM8wAZswAmcwAzMwA/8wrAMwrM8wrZswrmcwrzMwr/8xVAMxVM8xVZsxVmcxVzMxV/8yAAMyAM8yAZsyAmcyAzMyA/8yqAMyqM8yqZsyqmcyqzMyq/8zVAMzVM8zVZszVmczVzMzV/8z/AMz/M8z/Zsz/mcz/zMz///8AAP8AM/8AZv8Amf8AzP8A//8rAP8rM/8rZv8rmf8rzP8r//9VAP9VM/9VZv9Vmf9VzP9V//+AAP+AM/+AZv+Amf+AzP+A//+qAP+qM/+qZv+qmf+qzP+q///VAP/VM//VZv/Vmf/VzP/V////AP//M///Zv//mf//zP///wAAAAAAAAAAAAAAAAj/AKUJHCjt1r6DCBMqXLiP3i2CEAkaZEhx4bJsESOi8lWxI8Jl4FBlJDgtnEePxMCNJPjKVrSTFevZWklQHMyKxGbSFOjyJkOQOwVO9KmQ3qug0l4RXUjsYdBUJpd+/IY01bmXFfUd1KpQ2TaRO6f1gom1a8igqIZKJaYNKSp0UpcdTAmWptWyS5XZmhbUVTi5Uve501aXJsfA+3JWvUUPcdOqYxHTg4VUmi3EiY8+PRz4cdBplxEra4s0dGfKaDlLHaZzJ1S8RN053YkqcufWdqPeRuoXts+UVa8ilpkKrdq8mne+gisaHN+gPRHjXpnKdmBllY8vZftUO1FlKsNaGpc6Gan339NH3vLtc/TT8dvDBX11/iZdiAEBADs=);
+	background-position: left top;
+	background-repeat: repeat;
+}
+.alert-message-type-2 {
+	background-image: url(data:image/gif;base64,R0lGODlhJwAnADAAACH5BAAAAAAALAAAAAAnACcAhwAAAAAAMwAAZgAAmQAAzAAA/wArAAArMwArZgArmQArzAAr/wBVAABVMwBVZgBVmQBVzABV/wCAAACAMwCAZgCAmQCAzACA/wCqAACqMwCqZgCqmQCqzACq/wDVAADVMwDVZgDVmQDVzADV/wD/AAD/MwD/ZgD/mQD/zAD//zMAADMAMzMAZjMAmTMAzDMA/zMrADMrMzMrZjMrmTMrzDMr/zNVADNVMzNVZjNVmTNVzDNV/zOAADOAMzOAZjOAmTOAzDOA/zOqADOqMzOqZjOqmTOqzDOq/zPVADPVMzPVZjPVmTPVzDPV/zP/ADP/MzP/ZjP/mTP/zDP//2YAAGYAM2YAZmYAmWYAzGYA/2YrAGYrM2YrZmYrmWYrzGYr/2ZVAGZVM2ZVZmZVmWZVzGZV/2aAAGaAM2aAZmaAmWaAzGaA/2aqAGaqM2aqZmaqmWaqzGaq/2bVAGbVM2bVZmbVmWbVzGbV/2b/AGb/M2b/Zmb/mWb/zGb//5kAAJkAM5kAZpkAmZkAzJkA/5krAJkrM5krZpkrmZkrzJkr/5lVAJlVM5lVZplVmZlVzJlV/5mAAJmAM5mAZpmAmZmAzJmA/5mqAJmqM5mqZpmqmZmqzJmq/5nVAJnVM5nVZpnVmZnVzJnV/5n/AJn/M5n/Zpn/mZn/zJn//8wAAMwAM8wAZswAmcwAzMwA/8wrAMwrM8wrZswrmcwrzMwr/8xVAMxVM8xVZsxVmcxVzMxV/8yAAMyAM8yAZsyAmcyAzMyA/8yqAMyqM8yqZsyqmcyqzMyq/8zVAMzVM8zVZszVmczVzMzV/8z/AMz/M8z/Zsz/mcz/zMz///8AAP8AM/8AZv8Amf8AzP8A//8rAP8rM/8rZv8rmf8rzP8r//9VAP9VM/9VZv9Vmf9VzP9V//+AAP+AM/+AZv+Amf+AzP+A//+qAP+qM/+qZv+qmf+qzP+q///VAP/VM//VZv/Vmf/VzP/V////AP//M///Zv//mf//zP///wAAAAAAAAAAAAAAAAj/AAEIHGgDkjF7CBMqXKgwniUwAyNKBADDEjyGGDFygjhxog2LGUMiZAaMY8eIMCBdFJnRWMmTEm3oYsaypTGTMClaOliTobGbOQmq7OkTaFCBQ4kq/Ikzpw2eShMaPZoyqtSXRwEUXBn12NSgFbkqZZpVa9KoZLPC0AU1KtajH9sSPfawbEqxSt8G/Yi3Z1qqwOT61evUoFV7f8GeHUsYJt/DiXOuFVzTZVPHkGgeBmbG7mKikTH3rdms8UmZmtGa7piSMsvQpyEdRrjaI0irzeqqZTu7dsyds49dPhl2NuKyW2db3u369VfHwCE/J/4Z9PSOBY0vp8pb+nCPmY37Bh5Y3HvHgAA7);
+	background-position: left top;
+	background-repeat: repeat;
+}

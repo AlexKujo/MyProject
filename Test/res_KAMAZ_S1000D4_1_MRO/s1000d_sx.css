@@ -1,0 +1,196 @@
+/*
+    s1000d_en.css
+    19.06.2015 18:01:37
+*/
+
+/* Autocontent */
+
+.identAndStatusSection .issueInfo[data-issuenumber]:before      { content: "Issue: "; }
+.identAndStatusSection .language[data-languageisocode]:before   { content: "Language: "; }
+.identAndStatusSection .issueDate[data-day]:before              { content: "Date: "; }
+
+.dmCode:after               { content: attr(data-modelIdentCode) "-" attr(data-systemDiffCode) "-" attr(data-systemCode) "-" attr(data-subSystemCode) attr(data-subSubSystemCode) "-" attr(data-assyCode) "-" attr(data-disassyCode) attr(data-disassyCodeVariant) "-" attr(data-infoCode) attr(data-infoCodeVariant) "-" attr(data-itemLocationCode); }
+.dmCode[learnCode]:after    { content: attr(data-modelIdentCode) "-" attr(data-systemDiffCode) "-" attr(data-systemCode) "-" attr(data-subSystemCode) attr(data-subSubSystemCode) "-" attr(data-assyCode) "-" attr(data-disassyCode) attr(data-disassyCodeVariant) "-" attr(data-infoCode) attr(data-infoCodeVariant) "-" attr(data-itemLocationCode) "-" attr(data-learnCode) "-" attr(data-learnEventCode); }
+.pmCode:after               { content: attr(data-modelIdentCode) "-" attr(data-pmIssuer) "-" attr(data-pmNumber) "-" attr(data-pmVolume); }
+
+.issueInfo[data-issuenumber]:after      { content: attr(data-issuenumber) "-" attr(data-inwork); }
+.language[data-languageisocode]:after   { content: attr(data-languageisocode) "-" attr(data-countryisocode); }
+.issueDate[data-day]:after              { content: attr(data-day) "-" attr(data-month) "-" attr(data-year) }
+
+.firstVerification:after                { content: attr(data-verificationType); }
+.skillLevel[data-skillLevelCode]:after  { content: attr(data-skillLevelCode); }
+
+.dataRestrictions:before        { content: "Data Restrictions:"; }
+.dataDistribution:before        { content: "Distribution"; }
+.exportControl:before           { content: "Export Control"; }
+.dataHandling:before            { content: "Handling"; }
+.dataDestruction:before         { content: "Destruction"; }
+.dataDisclosure:before          { content: "Disclosure"; }
+.copyright:before               { content: "Copyright"; }
+
+.dmRefAddressItems .infoName:before { content: " - "; }
+.identNumber:before                 { content: ""; }
+.partAndSerialNumber:before         { content: "/"; }
+.natoStockNumber:before             { content: "NSN "; }
+.serialNumber:before                { content: "Serial no. " attr(data-serialNumberValue); }
+.customerStockNumber:before         { content: "Stock no. "; }
+.zoneRef:before                     { content: "Zone " attr(data-zoneNumber); }
+.accessPointRef:before,  
+.accessPointRef[data-accessPointTypeValue="accpnl01"]:before  { content: "Door " attr(data-accessPointNumber); }
+.accessPointRef[data-accessPointTypeValue="accpnl02"]:before  { content: "Panel " attr(data-accessPointNumber); }
+.accessPointRef[data-accessPointTypeValue="accpnl03"]:before  { content: "Electrical panel " attr(data-accessPointNumber); }
+
+.multimediaObject:before,
+.graphic:before                         { content: "Fig " counter(figure) " "; }
+.graphic[data-sheets]:after             { content: " (Sheet " counter(sheet) " of " attr(data-sheets) ")"; }
+.multimediaObject[data-sheets]:after    { content: " (Media " counter(sheet) " of " attr(data-sheets) ")"; }
+.internalRef.irtt01:before              { content: "Fig " attr(data-figure); }
+.internalRef.irtt02:before              { content: "Table " attr(data-index); }
+.internalRef.irtt03:before              { content: "Fig " attr(data-figure); }
+.internalRef.irtt07:before              { content: "Para " attr(data-index); }
+.internalRef.irtt08:before              { content: "Step " attr(data-index); }
+.internalRef.irtt09:before              { content: "Fig " attr(data-figure) ", Sheet " attr(data-sheet); }
+.internalRef.irtt10:before              { content: "Fig " attr(data-figure) ", " attr(data-multimediaType); }
+.internalRef.irtt11:before              { content: "Fig " attr(data-figure) " [" attr(data-referredFragment) "]"; }
+.internalRef.irtt13[data-zoneNumber]:before                 { content: "Zone " attr(data-zoneNumber); }
+.internalRef.irtt16[data-accessPointNumber]:before          { content: attr(data-accessPointNumber); }
+.internalRef.irtt16.accpnl01[data-accessPointNumber]:before { content: "Access door " attr(data-accessPointNumber); }
+.internalRef.irtt16.accpnl02[data-accessPointNumber]:before { content: "Access panel " attr(data-accessPointNumber); }
+.internalRef.irtt16.accpnl03[data-accessPointNumber]:before { content: "Access electrical panel " attr(data-accessPointNumber); }
+
+#app-figure-title.multimediaObject:before,
+#app-figure-title.internalRef.irtt01:before,
+#app-figure-title.internalRef.irtt03:before,
+#app-figure-title.internalRef.irtt09:before,
+#app-figure-title.internalRef.irtt10:before,
+#app-figure-title.internalRef.irtt11:before,
+#app-figure-title.internalRef.irtt12:before,
+#app-figure-title.graphic:before { content: "Fig " attr(data-index) " "; }
+#app-figure-title.graphic[data-subindexes]:after { content: " (Sheet " attr(data-subindex) " of " attr(data-subindexes) ")"; }
+#app-figure-title.multimediaObject[data-subindexes]:after { content: " (Media " attr(data-subindex) " of " attr(data-subindexes) ")"; }
+#app-figure-title.graphic[data-subindexes='']:after,
+#app-figure-title.multimediaObject[data-subindexes='']:after { content: none; }
+
+.personnel .numRequired[data-value]:before      { content: attr(data-value) " persons"; }
+.personnel .numRequired[data-value='1']:before  { content: attr(data-value) " person"; }
+.personnel .numRequired[data-value='0']:before,
+.personnel .numRequired[data-value='']:before   { content: "As required"; }
+
+.taskDuration:before    { content: "Maintenance task duration"; }
+.taskDuration:after     { content: "Preliminary requirements " attr(data-startupDuration) " " attr(data-unitOfMeasure) "\000a" "Procedure " attr(data-procedureDuration) " " attr(data-unitOfMeasure) "\000a"  "Requirements after job completion " attr(data-closeupDuration) " " attr(data-unitOfMeasure); }
+
+.externalPubCode:before         { content: attr(data-pubCodingScheme); }
+.externalPubIssueInfo:before    { content: "Edition: "; }
+
+/* Centerhead2 titles */
+
+.mainProcedure:before           { content: "Procedure"; }
+.content > .description:before  { content: "Description"; }
+.maintPlanning:before           { content: "Schedule"; }
+.isolationMainProcedure:before  { content: "Fault isolation procedure"; }
+.descrCrew:before               { content: "Crew/operator content"; }
+.commonRepository:before        { content: "Common information repository"; }
+.faultReporting:before          { content: "Fault reporting"; }
+.detectionInfo:before           { content: "Fault Detection"; }
+
+.content > .refs:before         { content: "References"; }
+.preliminaryRqmts:before        { content: "Preliminary requirements"; }
+.closeRqmts:before              { content: "Requirements after job completion"; }
+
+/* sidehead0 titles */
+
+.cautionRepository:before                   { content: "Caution repository"; }
+.toolRepository:before                      { content: "Tool repository"; }
+.controlIndicatorRepository:before          { content: "Controls and indicators"; }
+.functionalPhysicalAreaRepository:before    { content: "Functional and/or physical area repository"; }
+.warningRepository:before                   { content: "Warning repository"; }
+.zoneRepository:before                      { content: "Zone repository"; }
+.partRepository:before                      { content: "Part repository"; }
+.functionalItemRepository:before            { content: "Functional item repository"; }
+
+/* Warning, Caution, Note */
+
+.warning:before { content: "WARNING"; }
+.caution:before { content: "CAUTION"; }
+.note:before    { content: "Note"; }
+
+/* Sidehead0 titles */
+
+.productionMaintData:before { content: "Production management data"; }
+.reqCondGroup:before        { content: "Required conditions"; }
+.reqSupportEquips:before    { content: "Support equipment"; }
+.reqSupplies:before         { content: "Consumables, materials and expendables"; }
+.reqTechInfoGroup:before    { content: "Required technical information"; }
+.reqSpares:before           { content: "Spares"; }
+.reqSafety:before           { content: "Safety conditions"; }
+.reqPersons:before          { content: "Required persons"; }
+.workAreaLocationGroup:before    { content: "Work area location"; }
+
+/* None keyword */
+
+.noSupportEquips:before,
+.noSupplies:before,
+.noSpares:before,
+.noSafety:before,
+.noConds:before             { content: "None."; }
+
+/* Tables */
+
+.table-contents > .title:before { content: "Table " counter(table) " "; }
+
+.header > .name:before          { content: "Name"; }
+.header > .ident:before         { content: "Identification/Reference"; }
+.header > .designation:before   { content: "Designation"; }
+.header > .qty:before           { content: "Quantity"; }
+.header > .remark:before        { content: "Remark"; }
+
+.header > .condition:before     { content: "Action/Condition"; }
+.header > .publication:before   { content: "Data module/Technical publication"; }
+.header > .title:before         { content: "Title"; }
+
+.header > .person:before        { content: "Person"; }
+.header > .category:before      { content: "Category"; }
+.header > .skill:before         { content: "Skill level"; }
+.header > .trade:before         { content: "Trade/Trade code"; }
+.header > .time:before          { content: "Estimated time"; }
+
+.dmodule:after                  { content: "End of data module"; }
+
+.dmStatus .security[data-securityClassification]:before      { content: "Security class " attr(data-securityClassification); }
+.dmStatus .security[data-securityClassification="01"]:before { content: "UNCLASSIFIED"; }
+.dmStatus .security[data-securityClassification="02"]:before { content: "RESTRICTED"; }
+.dmStatus .security[data-securityClassification="03"]:before { content: "CONFIDENTIAL"; }
+.dmStatus .security[data-securityClassification="04"]:before { content: "SECRET"; }
+.dmStatus .security[data-securityClassification="05"]:before { content: "TOP SECRET";}
+
+.dmStatus .responsiblePartnerCompany:before { content: "Responsible partner company: " attr(data-enterpriseCode) " / "; }
+.dmStatus .originator:before                { content: "Originator: " attr(data-enterpriseCode) " / "; }
+
+.applicCrossRefTableRef:before  { content: "ACT data module: "; }
+.dmStatus > .applic:before      { content: "Applicability: "; }
+.techStandard:before            { content: "Technical standard:"; }
+.brexDmRef:before               { content: "BREX data module: "; }
+.unverified:before              { content: "Unverified"; }
+.firstVerification:before       { content: "First verification: "; }
+.secondVerification:before      { content: "Second verification: "; }
+.systemBreakdownCode:before     { content: "System breakdown code: "; }
+.reasonForUpdate:before         { content: "Reason for update: "; }
+
+.skillLevel:before                              { content: "Skill level: "; }
+.personSkill .skillLevel:before                 { content: ""; }
+.skillLevel[data-skillLevelCode="sk01"]:after   { content: "Basic"; }
+.skillLevel[data-skillLevelCode="sk02"]:after   { content: "Intermediate"; }
+.skillLevel[data-skillLevelCode="sk03"]:after   { content: "Advanced"; }
+
+.catalogSeqNumberRef:before                                             { content: "CSN " attr(data-figureNumber)attr(data-figureNumberVariant) "-" attr(data-item)attr(data-itemVariant); }
+.catalogSeqNumberRef[data-systemCode]:before                            { content: "CSN " attr(data-systemCode) "-" attr(data-subSystemCode)attr(data-subSubSystemCode) "-" attr(data-assyCode) "-" attr(data-figureNumber)attr(data-figureNumberVariant) "-" attr(data-item)attr(data-itemVariant); }
+.catalogSeqNumberRef[data-itemSeqNumberValue]:before                    { content: "CSN/ISN " attr(data-figureNumber)attr(data-figureNumberVariant) "-" attr(data-item)attr(data-itemVariant) "/" attr(data-itemSeqNumberValue); }
+.catalogSeqNumberRef[data-systemCode][data-itemSeqNumberValue]:before   { content: "CSN/ISN " attr(data-systemCode) "-" attr(data-subSystemCode)attr(data-subSubSystemCode) "-" attr(data-assyCode) "-" attr(data-figureNumber)attr(data-figureNumberVariant) "-" attr(data-item)attr(data-itemVariant) "/" attr(data-itemSeqNumberValue); }
+
+.reqQuantity[data-unitOfMeasure]:after  { content: " " attr(data-unitOfMeasure); }
+.materialSetRef:before                  { content: attr(data-materialSetIdent) " " attr(data-materialSetIssue); }
+
+.natoStockNumber
+    [data-natoSupplyClass]
+    [data-natoCodificationBureau]
+    [data-natoItemIdentNumberCore]:after    { content: attr(data-natoSupplyClass) "-" attr(data-natoCodificationBureau) "-" attr(data-natoItemIdentNumberCore) }

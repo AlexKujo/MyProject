@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Created by VME v.14.0.1.0 (build 14.0.1.477 (64-bit))-->
+<SimulationInteractivity xmlns="http://services.parallelgraphics.com/vm/mmr/vm-interactivity-xml/all">
+<SimulationInformation>
+<ExporterVersionNumber>14.0.1.477 (64-bit)</ExporterVersionNumber>
+<ModificationDate>10/10/24</ModificationDate>
+<SpecID>KAMAZ_S1000D4_1_MRO</SpecID>
+<SpecVersion>1.17</SpecVersion>
+<SpecLang>ru</SpecLang>
+<XMLFileName>KAMAZ53949-XBA3-31-03-00-00RZ0-520B-B</XMLFileName>
+<FileName>ICN-KAMAZ53949-XBA3-310300-A-00000-00000-B-001-01</FileName>
+<DocumentFile>DMC-KAMAZ53949-XBA3-31-03-00-00RZ0-520B-B_000-01_ru-RU.xml</DocumentFile>
+<Options>
+<Value name="3DFramePosition" type="string">Right</Value>
+<Value name="3DFrameSize" type="string">60</Value>
+<Value name="AutoRepeat" type="boolean">No</Value>
+<Value name="Background3DColor" type="color">#FFFFFF</Value>
+<Value name="CoordinateResolution" type="string">0</Value>
+<Value name="HighlightedStepColor" type="color">#FFEFD5</Value>
+<Value name="IllustrationType" type="string">0</Value>
+<Value name="RemoveSpace" type="boolean">No</Value>
+<Value name="SelectedFrameColor" type="color">#ADD8E6</Value>
+<Value name="SelectedHotspotColor" type="color">#00FF00</Value>
+<Value name="ShowPrevNextButtons" type="boolean">Yes</Value>
+<Value name="ShowFreezeCheckbox" type="boolean">Yes</Value>
+<Value name="ShowSmoothControl" type="boolean">Yes</Value>
+<Value name="ShowSpeedSelection" type="boolean">Yes</Value>
+<Value name="SimplifyFloats" type="boolean">No</Value>
+<Value name="UpRight" type="boolean">No</Value>
+<Value name="StartAfterLoading" type="boolean">No</Value>
+<Value name="VRMLProfile" type="string">1</Value>
+<Value name="ForceDirectX" type="boolean">Yes</Value>
+<Value name="EncodeRes" type="boolean">Yes</Value>
+<Value name="PDFPublish" type="boolean">No</Value>
+<Value name="3DStepsAutoBinding" type="boolean">Yes</Value>
+<Value name="UsePlugins" type="boolean">No</Value>
+<Value name="PublicPath" type="string">
+</Value>
+<Value name="TotalMemory" type="number">512</Value>
+</Options>
+<metadata>
+<value name="infoCodeVariant" decl-id="ICV" type="string">B</value>
+<value name="itemLocationCode" decl-id="ILC" type="string">B</value>
+<value name="ICNMethod" decl-id="ICNMETHOD" type="string">MI</value>
+<value name="issueType" decl-id="ISSUE_TYPE" type="string">new</value>
+<value name="issueNumber" decl-id="ISSUE_NO" type="integer">0</value>
+<value name="inWork" decl-id="ISSUE_REVNO" type="integer">1</value>
+<value name="Schema" decl-id="SCHEMA" type="string">proced</value>
+<value name="securityClassification" decl-id="SECCLASS" type="integer">1</value>
+<value name="assyCode" decl-id="UNIT" type="string">00</value>
+<value name="BREX" decl-id="BREX" type="string">S1000D-E-04-10-0301-00A-022A-D</value>
+<value name="Country" decl-id="COUNTRY" type="string">RU</value>
+<value name="disassyCode" decl-id="DC" type="string">00</value>
+<value name="disassyCodeVariant" decl-id="DCV" type="string">RZ0</value>
+<value name="infoCode" decl-id="IC" type="string">520</value>
+<value name="infoName" decl-id="INFONAME" type="string">
+</value>
+<value name="issueDate" decl-id="ISSUE_DATE" type="string">20240930</value>
+<value name="Language" decl-id="LANG" type="string">ru</value>
+<value name="learnCode" decl-id="LEARNCODE" type="string">
+</value>
+<value name="learnEventCode" decl-id="LEARNEVENTCODE" type="string">
+</value>
+<value name="modelIdentCode" decl-id="MI" type="string">KAMAZ53949</value>
+<value name="originator" decl-id="ORIGINATOR" type="string">
+</value>
+<value name="originatorCode" decl-id="ORIGINATORCODE" type="string">
+</value>
+<value name="qualityAssurance" decl-id="QA" type="string">unverified</value>
+<value name="responsiblePartnerCompany" decl-id="RPC" type="string">
+</value>
+<value name="responsiblePartnerCompanyCode" decl-id="APPLIC_MFC" type="string">
+</value>
+<value name="S1000D_ISSUE" decl-id="S1000D_ISSUE" type="string">S1000D_4-1</value>
+<value name="subSystem" decl-id="SUBSYSTEM" type="string">03</value>
+<value name="systemCode" decl-id="SYSTEM" type="string">31</value>
+<value name="systemDiffCode" decl-id="SDC" type="string">XBA3</value>
+<value name="techName" decl-id="TITLE" type="string"> Снять ступицу переднего колеса </value>
+<value name="APPLIC" decl-id="APPLIC" type="string">&lt;applic&gt;
+&lt;displayText&gt;
+&lt;simplePara/&gt;
+&lt;/displayText&gt;
+&lt;/applic&gt;</value>
+<value name="APPLIC_DESCR" decl-id="APPLIC_DESCR" type="string">
+</value>
+<value name="SBC" decl-id="SBC" type="string">
+</value>
+<value name="DATARESTRICTIONS" decl-id="DATARESTRICTIONS" type="string">
+</value>
+<value name="ICN" decl-id="ICN" type="string">ICN-KAMAZ53949-XBA3-310300-A-00000-00000-B-001-01</value>
+</metadata>
+</SimulationInformation>
+<Simulation id="rfd35d4a5-fb65-4a33-8a40-5c00a241bec2">
+<Description>
+</Description>
+<Step id="r360aa064-a53a-4786-9372-1bab84c0f3ee">
+<Description>Снять барабан</Description>
+<Substep id="r83d7de34-fccc-41e4-8ca2-c29556da905f">
+<Description>Инспектировать Винты барабан</Description>
+</Substep>
+<Substep id="rc16737b2-c6c9-4336-9499-dbb7ec26fadf">
+<Description>Показать Отвертка</Description>
+</Substep>
+<Substep id="r88104727-3d46-461b-bc77-f261b33c7ce4">
+<Description>Инспектировать Отвертка</Description>
+</Substep>
+<Substep id="rd0a034cb-6552-4ba2-9871-c82969d0bf36">
+<Description>Переместить Отвертка</Description>
+</Substep>
+<Substep id="r6ba89ea8-79e0-4560-a144-63af40b1d171">
+<Description>Переместить Отвертка + винт</Description>
+</Substep>
+<Substep id="r9f088523-1704-48c0-b8d1-afd5d2acf766">
+<Description>Скрыть Отвертка</Description>
+</Substep>
+<Substep id="rec9d2d0c-b3c6-4de6-9382-00ee2d18b2f1">
+<Description>Снять Винты барабан</Description>
+</Substep>
+<Substep id="ra1f672a6-aaa2-4841-b30f-f5831ee18a2d">
+<Description>Снять Барабан</Description>
+</Substep>
+</Step>
+<Step id="r174d1f6d-9a29-4173-8a3e-3630223177ec">
+<Description>Снять ступицу</Description>
+<Substep id="r8c258029-3d6a-46df-b314-3c8f00bddc89">
+<Description>Снять 43114-3104077_1;1-Гайка подшипника_27373 (4)</Description>
+</Substep>
+<Substep id="rf6d8aefa-e978-4fb0-bfaa-9f47438034a1">
+<Description>Снять 43114-3104082_1;1-Шайба отгибная_609287 (3)</Description>
+</Substep>
+<Substep id="r67424982-e049-4e1e-bd8a-4dfb4753a781">
+<Description>Снять 4310-3103079_5;1-Шайба замковая_368520 (3)</Description>
+</Substep>
+<Substep id="r567a3fbe-40c1-40cb-9dff-e4ddaa22a427">
+<Description>Снять Ступица</Description>
+</Substep>
+</Step>
+</Simulation>
+<Procedure id="rfd35d4a5-fb65-4a33-8a40-5c00a241bec2">
+<Item id="r360aa064-a53a-4786-9372-1bab84c0f3ee">
+<Action id="r83d7de34-fccc-41e4-8ca2-c29556da905f">
+</Action>
+<Action id="rc16737b2-c6c9-4336-9499-dbb7ec26fadf">
+</Action>
+<Action id="r88104727-3d46-461b-bc77-f261b33c7ce4">
+</Action>
+<Action id="rd0a034cb-6552-4ba2-9871-c82969d0bf36">
+</Action>
+<Action id="r6ba89ea8-79e0-4560-a144-63af40b1d171">
+</Action>
+<Action id="r9f088523-1704-48c0-b8d1-afd5d2acf766">
+</Action>
+<Action id="rec9d2d0c-b3c6-4de6-9382-00ee2d18b2f1">
+</Action>
+<Action id="ra1f672a6-aaa2-4841-b30f-f5831ee18a2d">
+</Action>
+<Description>Снять барабан</Description>
+</Item>
+<Item id="r174d1f6d-9a29-4173-8a3e-3630223177ec">
+<Action id="r8c258029-3d6a-46df-b314-3c8f00bddc89">
+</Action>
+<Action id="rf6d8aefa-e978-4fb0-bfaa-9f47438034a1">
+</Action>
+<Action id="r67424982-e049-4e1e-bd8a-4dfb4753a781">
+</Action>
+<Action id="r567a3fbe-40c1-40cb-9dff-e4ddaa22a427">
+</Action>
+<Description>Снять ступицу</Description>
+</Item>
+</Procedure>
+<DocItems>
+</DocItems>
+<Resources>
+<Picture descr="" flags="13" action="r83d7de34-fccc-41e4-8ca2-c29556da905f">ICN-KAMAZ53949-XBA3-310300-A-00000-00001-B-001-01.svg</Picture>
+<Picture descr="" flags="13" action="ra1f672a6-aaa2-4841-b30f-f5831ee18a2d">ICN-KAMAZ53949-XBA3-310300-A-00000-00002-B-001-01.svg</Picture>
+<Picture descr="" flags="13" action="rf6d8aefa-e978-4fb0-bfaa-9f47438034a1">ICN-KAMAZ53949-XBA3-310300-A-00000-00004-B-001-01.svg</Picture>
+<Picture descr="" flags="13" action="r67424982-e049-4e1e-bd8a-4dfb4753a781">ICN-KAMAZ53949-XBA3-310300-A-00000-00005-B-001-01.svg</Picture>
+<Picture descr="" flags="13" action="r8c258029-3d6a-46df-b314-3c8f00bddc89">ICN-KAMAZ53949-XBA3-310300-A-00000-00003-B-001-01.svg</Picture>
+<Picture descr="" flags="13" action="r567a3fbe-40c1-40cb-9dff-e4ddaa22a427">ICN-KAMAZ53949-XBA3-310300-A-00000-00006-B-001-01.svg</Picture>
+</Resources>
+</SimulationInteractivity>

@@ -1,0 +1,68 @@
+﻿[
+  {
+    "MinValue": 0.75,
+    "MaxValue": 1.10,
+    "Designation": "M6",
+    "WrenchSize": 10
+  },
+  {
+    "MinValue": 2.45,
+    "MaxValue": 3.45,
+    "Designation": "M8",
+    "WrenchSize": 13
+  },
+  {
+    "MinValue": 5.25,
+    "MaxValue": 7.40,
+    "Designation": "M10x1,25",
+    "WrenchSize": 17
+  },
+  {
+    "MinValue": 9.30,
+    "MaxValue": 13.0,
+    "Designation": "M12x1,25",
+    "WrenchSize": 19
+  },
+  {
+    "MinValue": 9.30,
+    "MaxValue": 13.0,
+    "Designation": "M12x1,5",
+    "WrenchSize": 19
+  },
+  {
+    "MinValue": 15.0,
+    "MaxValue": 21.0,
+    "Designation": "M14x1,5",
+    "WrenchSize": 22
+  },
+  {
+    "MinValue": 22.0,
+    "MaxValue": 31.0,
+    "Designation": "M16x1,5",
+    "WrenchSize": 24
+  },
+  {
+    "MinValue": 32.5,
+    "MaxValue": 45.5,
+    "Designation": "M18x1,5",
+    "WrenchSize": 27
+  },
+  {
+    "MinValue": 45.5,
+    "MaxValue": 64.0,
+    "Designation": "M20x1,5",
+    "WrenchSize": 30
+  },
+  {
+    "MinValue": 60.5,
+    "MaxValue": 85.5,
+    "Designation": "M22x1,5",
+    "WrenchSize": 32
+  },
+  {
+    "MinValue": 76.5,
+    "MaxValue": 108,
+    "Designation": "M24x2",
+    "WrenchSize": 36
+  }
+]
