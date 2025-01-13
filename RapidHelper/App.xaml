@@ -3,25 +3,25 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-        
+        <!-- Стиль для окон -->
+        <Style TargetType="{x:Type Window}">
+            <Setter Property="Background"
+                    Value="#FFF0F0F0" />
+            <Setter Property="Icon"
+                    Value="pack://application:,,,/EmbeddedResources/icon.ico" />
+        </Style>
         <!-- Базовый стиль для всех контролов -->
-        <Style TargetType="Control"
+        <Style TargetType="{x:Type Control}"
                x:Key="BaseControlStyle">
             <Setter Property="FontFamily"
                     Value="Verdana" />
         </Style>
         <!-- Специфический стиль для кнопок -->
-        <Style TargetType="Button"
+        <Style TargetType="{x:Type Button}"
                BasedOn="{StaticResource BaseControlStyle}">
             <Setter Property="Background"
                     Value="WhiteSmoke" />
         </Style>
-        <!-- Стиль для окон -->
-        <Style TargetType="Window">
-            <Setter Property="Background"
-                    Value="#FFF0F0F0" />
-            <Setter Property="Icon"
-                    Value="pack://application:,,,/EmbeddedResources/icon.ico"/>
-        </Style>
+        
     </Application.Resources>
 </Application>

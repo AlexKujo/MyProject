@@ -9,7 +9,7 @@ namespace RapidHelper
     /// </summary>
     public partial class App : Application
     {
-
+        
     }
 
 }

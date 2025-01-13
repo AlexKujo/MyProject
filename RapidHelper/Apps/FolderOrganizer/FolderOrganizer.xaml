@@ -11,7 +11,8 @@
         FontFamily="Verdana"
         FontSize="12"
         ResizeMode="NoResize"
-        WindowStartupLocation="CenterScreen">
+        WindowStartupLocation="CenterScreen"
+        Style="{StaticResource {x:Type Window}}">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto" />

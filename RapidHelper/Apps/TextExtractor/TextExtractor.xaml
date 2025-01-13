@@ -5,12 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RapidHelper"
         mc:Ignorable="d"
-        Title="ExtractHtmlTextWindow"
+        Title="Извлечь текст"
         MinHeight="450"
         MinWidth="450"
         Width="800"
         WindowStartupLocation="CenterScreen"
-        SizeToContent="Height">
+        SizeToContent="Height"
+        Style="{StaticResource {x:Type Window}}">
     <Grid>
         <ListBox x:Name="ExtractedListBox"
                  AllowDrop="True"

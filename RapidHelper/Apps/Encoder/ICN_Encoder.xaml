@@ -6,11 +6,13 @@
         xmlns:local="clr-namespace:RapidHelper"
         mc:Ignorable="d"
         Title="Кодировка"
+        WindowStartupLocation="CenterScreen"
         Height="252"
         Width="550"
         Topmost="True"
         ResizeMode="NoResize"
-        FontFamily="Verdana">
+        FontFamily="Verdana"
+        Style="{StaticResource {x:Type Window}}">
     <Grid Cursor="Hand">
         <Grid.RowDefinitions>
             <RowDefinition Height="80*" />
@@ -34,6 +36,7 @@
                  GotFocus="InputEncode_GotFocus"
                  LostFocus="InputEncode_LostFocus" />
         <Border BorderBrush="Gray"
+                Background="WhiteSmoke"
                 BorderThickness="1"
                 CornerRadius="3"
                 Padding="5"
@@ -48,6 +51,7 @@
                        TextAlignment="Center"
                        Cursor="Hand"
                        Foreground="Blue"
+                       Background="WhiteSmoke"
                        TextDecorations="UnderLine"
                        MouseLeftButtonUp="OutputEncode_MouseLeftButtonUp"
                        Height="24"

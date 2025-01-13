@@ -5,13 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RapidHelper"
         mc:Ignorable="d"
-        Title="ProcedureReverserWindow"
+        Title="Инвертирование процедуры"
         WindowStartupLocation="CenterScreen"
         MinWidth="300"
         MinHeight="400"
         d:DesignHeight="564.96"
         Width="1200"
-        Height="800">
+        Height="800"
+        Style="{StaticResource {x:Type Window}}">
     <Grid ShowGridLines="False">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="2*" />

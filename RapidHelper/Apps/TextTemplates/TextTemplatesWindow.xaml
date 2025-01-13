@@ -10,7 +10,8 @@
         Width="1407"
         WindowStartupLocation="CenterScreen"
         FontSize="12"
-        FontFamily="Verdana">
+        FontFamily="Verdana"
+        Style="{StaticResource {x:Type Window}}">
     <Grid ShowGridLines="False">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="145*" />
